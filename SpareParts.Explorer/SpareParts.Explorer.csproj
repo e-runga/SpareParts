@@ -567,7 +567,6 @@
     <None Include="Resources\find_replace_64.png" />
     <None Include="Resources\Complaint_64.jpg" />
     <None Include="Resources\Search_Product_64.jpg" />
-    <None Include="Resources\Home16x16.png" />
     <Content Include="Template\InstallHome.htm" />
     <Content Include="Template\publish-template.htm" />
     <None Include="Resources\trailer.png" />
