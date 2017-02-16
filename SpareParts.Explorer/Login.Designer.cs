@@ -36,8 +36,8 @@
             this.textEditPassword = new DevExpress.XtraEditors.TextEdit();
             this.simpleButtonLogin = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.simpleButtonCancel = new DevExpress.XtraEditors.SimpleButton();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.textEditUserName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.textEditPassword.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
@@ -112,14 +112,6 @@
             this.panelControl1.Size = new System.Drawing.Size(438, 208);
             this.panelControl1.TabIndex = 6;
             // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::SpareParts.Explorer.Properties.Resources.mekano200;
-            this.panel1.Location = new System.Drawing.Point(10, 9);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(195, 180);
-            this.panel1.TabIndex = 7;
-            // 
             // simpleButtonCancel
             // 
             this.simpleButtonCancel.Image = ((System.Drawing.Image)(resources.GetObject("simpleButtonCancel.Image")));
@@ -128,6 +120,14 @@
             this.simpleButtonCancel.Size = new System.Drawing.Size(75, 36);
             this.simpleButtonCancel.TabIndex = 8;
             this.simpleButtonCancel.Text = "Cancel";
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::SpareParts.Explorer.Properties.Resources.trademark;
+            this.panel1.Location = new System.Drawing.Point(10, 9);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(195, 180);
+            this.panel1.TabIndex = 7;
             // 
             // Login
             // 
@@ -159,7 +159,7 @@
         private DevExpress.XtraEditors.TextEdit textEditPassword;
         private DevExpress.XtraEditors.SimpleButton simpleButtonLogin;
         private DevExpress.XtraEditors.PanelControl panelControl1;
-        private System.Windows.Forms.Panel panel1;
         private DevExpress.XtraEditors.SimpleButton simpleButtonCancel;
+        private System.Windows.Forms.Panel panel1;
     }
 }
