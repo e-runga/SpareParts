@@ -194,7 +194,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::SpareParts.Explorer.Properties.Resources.boy;
+            this.pictureBox1.Image = global::SpareParts.Explorer.Properties.Resources.car_64;
             this.pictureBox1.Location = new System.Drawing.Point(113, 12);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(75, 75);
