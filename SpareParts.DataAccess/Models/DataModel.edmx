@@ -1,0 +1,2411 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SparePartsModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Attachment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FileName" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="Extension" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="MimeType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Content" Type="varbinary(max)" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Brand">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BrandModel">
+          <Key>
+            <PropertyRef Name="BrandId" />
+            <PropertyRef Name="ModelId" />
+          </Key>
+          <Property Name="BrandId" Type="int" Nullable="false" />
+          <Property Name="ModelId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ParentId" Type="int" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="CountryId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="Mobile" Type="varchar" MaxLength="20" />
+          <Property Name="Phone" Type="varchar" MaxLength="20" />
+          <Property Name="CustomerTypeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CustomerType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Model">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ModelSubModel">
+          <Key>
+            <PropertyRef Name="ModelId" />
+            <PropertyRef Name="SubModelId" />
+          </Key>
+          <Property Name="ModelId" Type="int" Nullable="false" />
+          <Property Name="SubModelId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PaperReference">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="200" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="250" />
+          <Property Name="ItemId" Type="int" Nullable="false" />
+          <Property Name="ProductTypeId" Type="int" Nullable="false" />
+          <Property Name="PaperReferenceId" Type="int" />
+          <Property Name="LocationId" Type="int" Nullable="false" />
+          <Property Name="StockLocation" Type="varchar" MaxLength="50" />
+          <Property Name="CustomerId" Type="int" Nullable="false" />
+          <Property Name="OperatorId" Type="int" Nullable="false" />
+          <Property Name="RatingId" Type="int" />
+          <Property Name="DepositBuyDate" Type="datetime" Nullable="false" />
+          <Property Name="BuyingPrice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Sold" Type="bit" Nullable="false" />
+          <Property Name="SellPrice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="SellingOperatorId" Type="int" />
+          <Property Name="BuyerId" Type="int" />
+          <Property Name="Mecanic" Type="bit" />
+          <Property Name="SellingDate" Type="datetime" />
+          <Property Name="VehicleIdentificationNumber" Type="varchar" MaxLength="80" />
+          <Property Name="CarIdentificationNumber" Type="varchar" MaxLength="70" />
+          <Property Name="HasComplaint" Type="bit" />
+          <Property Name="ComplaintOperatorId" Type="int" />
+          <Property Name="ComplaintDate" Type="datetime" />
+          <Property Name="IsReturn" Type="bit" />
+          <Property Name="ReturnOperatorId" Type="int" />
+          <Property Name="ReturnDate" Type="datetime" />
+          <Property Name="IsReplace" Type="bit" />
+          <Property Name="ReplaceOperatorId" Type="int" />
+          <Property Name="ReplaceDate" Type="datetime" />
+          <Property Name="ReplacedProductId" Type="int" />
+          <Property Name="IsReimbursed" Type="bit" />
+          <Property Name="IsAvailable" Type="bit" />
+          <Property Name="RequestNumber" Type="varchar" MaxLength="100" />
+          <Property Name="RequestDate" Type="datetime" />
+          <Property Name="RequestOperatorId" Type="int" />
+          <Property Name="HasOrder" Type="bit" />
+          <Property Name="OrderNumber" Type="varchar" MaxLength="100" />
+          <Property Name="OrderDate" Type="datetime" />
+          <Property Name="OrderOperatorId" Type="int" />
+          <Property Name="OrderCustomerId" Type="int" />
+          <Property Name="OrderSellingPrice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="AdvancePaymentAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="EstimatedDeliveryDate" Type="datetime" />
+          <Property Name="FinalDate" Type="datetime" />
+          <Property Name="BalanceAmount" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="StateId" Type="int" Nullable="false" />
+          <Property Name="SubModelId" Type="int" />
+          <Property Name="StatusId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductBrand">
+          <Key>
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="BrandId" />
+          </Key>
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="BrandId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductCategory">
+          <Key>
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductModel">
+          <Key>
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="ModelId" />
+          </Key>
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="ModelId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductStatus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="20" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductTypeBrand">
+          <Key>
+            <PropertyRef Name="BrandId" />
+            <PropertyRef Name="ProductTypeId" />
+          </Key>
+          <Property Name="BrandId" Type="int" Nullable="false" />
+          <Property Name="ProductTypeId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductTypeCategory">
+          <Key>
+            <PropertyRef Name="ProductTypeId" />
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="ProductTypeId" Type="int" Nullable="false" />
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ProductYear">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="YearId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Rating">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="30" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SubModel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="100" />
+          <Property Name="Email" Type="varchar" MaxLength="100" />
+          <Property Name="Mobile" Type="varchar" MaxLength="50" />
+          <Property Name="ProfilesId" Type="int" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Enabled" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Year">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Year" Type="smallint" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SpareParts.dbo.ActiveCategoriesView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ActiveCategoriesView">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ParentId" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SpareParts.dbo.BrandView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="BrandView">
+          <Key>
+            <PropertyRef Name="BrandId" />
+            <PropertyRef Name="Brand" />
+            <PropertyRef Name="ProductTypeId" />
+            <PropertyRef Name="ProductType" />
+            <PropertyRef Name="Model" />
+          </Key>
+          <Property Name="ProductTypeId" Type="int" Nullable="false" />
+          <Property Name="ProductType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="BrandId" Type="int" Nullable="false" />
+          <Property Name="Brand" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Model" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SpareParts.dbo.BrandViewForUI' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="BrandViewForUI">
+          <Key>
+            <PropertyRef Name="ProductTypeId" />
+            <PropertyRef Name="ProductType" />
+            <PropertyRef Name="BrandId" />
+            <PropertyRef Name="Brand" />
+          </Key>
+          <Property Name="ProductTypeId" Type="int" Nullable="false" />
+          <Property Name="ProductType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="BrandId" Type="int" Nullable="false" />
+          <Property Name="Brand" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Models" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SpareParts.dbo.CategoryView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="CategoryView">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Category" />
+            <PropertyRef Name="SubCategory1Id" />
+            <PropertyRef Name="SubCategory1" />
+            <PropertyRef Name="SubCategory1ParentId" />
+            <PropertyRef Name="SubCategory2Id" />
+            <PropertyRef Name="SubCategory2" />
+            <PropertyRef Name="SubCategory2ParentId" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Category" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="ParentId" Type="int" />
+          <Property Name="SubCategory1Id" Type="int" Nullable="false" />
+          <Property Name="SubCategory1" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="SubCategory1ParentId" Type="int" Nullable="false" />
+          <Property Name="SubCategory2Id" Type="int" Nullable="false" />
+          <Property Name="SubCategory2" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="SubCategory2ParentId" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SpareParts.dbo.LocationView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="LocationView">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Location" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Location" Type="varchar" MaxLength="83" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SpareParts.dbo.ModelView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ModelView">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Model" />
+            <PropertyRef Name="SubModelId" />
+            <PropertyRef Name="SubModel" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="Model" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="SubModelId" Type="int" Nullable="false" />
+          <Property Name="SubModel" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SpareParts.dbo.ProductTypeBrandView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ProductTypeBrandView">
+          <Key>
+            <PropertyRef Name="ProductTypeId" />
+            <PropertyRef Name="ProductType" />
+            <PropertyRef Name="Brands" />
+          </Key>
+          <Property Name="ProductTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProductType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Brands" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SpareParts.dbo.ProductTypeView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ProductTypeView">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Brands" />
+            <PropertyRef Name="Categories" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Brands" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Categories" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SpareParts.dbo.ProductView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ProductView">
+          <Key>
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="Status" />
+            <PropertyRef Name="StatusName" />
+            <PropertyRef Name="SellPrice" />
+            <PropertyRef Name="BuyingPrice" />
+            <PropertyRef Name="Brand" />
+            <PropertyRef Name="Country" />
+            <PropertyRef Name="City" />
+            <PropertyRef Name="Model" />
+            <PropertyRef Name="Category" />
+            <PropertyRef Name="Years" />
+            <PropertyRef Name="Item" />
+            <PropertyRef Name="VIN" />
+            <PropertyRef Name="ProductType" />
+            <PropertyRef Name="State" />
+            <PropertyRef Name="Sold" />
+            <PropertyRef Name="HasOrder" />
+            <PropertyRef Name="IsReimbursed" />
+            <PropertyRef Name="IsReplace" />
+            <PropertyRef Name="IsReturn" />
+          </Key>
+          <Property Name="ProductId" Type="int" Nullable="false" />
+          <Property Name="ProductName" Type="varchar" MaxLength="250" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="StatusName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="SellPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="BuyingPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Brand" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Country" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="City" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Model" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Category" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Years" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Item" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="VIN" Type="varchar" MaxLength="80" Nullable="false" />
+          <Property Name="ProductType" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="State" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Sold" Type="bit" Nullable="false" />
+          <Property Name="HasOrder" Type="bit" Nullable="false" />
+          <Property Name="IsReimbursed" Type="bit" Nullable="false" />
+          <Property Name="IsReplace" Type="bit" Nullable="false" />
+          <Property Name="IsReturn" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Attachment_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="Attachment" Type="Self.Attachment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Attachment">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BrandModel_Brand">
+          <End Role="Brand" Type="Self.Brand" Multiplicity="1" />
+          <End Role="BrandModel" Type="Self.BrandModel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Brand">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BrandModel">
+              <PropertyRef Name="BrandId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BrandModel_Model">
+          <End Role="Model" Type="Self.Model" Multiplicity="1" />
+          <End Role="BrandModel" Type="Self.BrandModel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Model">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="BrandModel">
+              <PropertyRef Name="ModelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Category_SubCategory">
+          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+          <End Role="Category1" Type="Self.Category" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Category1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_City_Country">
+          <End Role="Country" Type="Self.Country" Multiplicity="1" />
+          <End Role="City" Type="Self.City" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_CustomerType">
+          <End Role="CustomerType" Type="Self.CustomerType" Multiplicity="1" />
+          <End Role="Customer" Type="Self.Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="CustomerTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ModelSubModel_Model">
+          <End Role="Model" Type="Self.Model" Multiplicity="1" />
+          <End Role="ModelSubModel" Type="Self.ModelSubModel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Model">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ModelSubModel">
+              <PropertyRef Name="ModelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ModelSubModel_SubModel">
+          <End Role="SubModel" Type="Self.SubModel" Multiplicity="1" />
+          <End Role="ModelSubModel" Type="Self.ModelSubModel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubModel">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ModelSubModel">
+              <PropertyRef Name="SubModelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Buyer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="BuyerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_City">
+          <End Role="City" Type="Self.City" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="LocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_ComplaintOperator">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ComplaintOperatorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_CustomerCreator">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Item">
+          <End Role="Item" Type="Self.Item" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_OperatorCreator">
+          <End Role="Users" Type="Self.Users" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="OperatorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_OrderCustomer">
+          <End Role="Customer" Type="Self.Customer" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="OrderCustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_OrderOperator">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="OrderOperatorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_PaperReference">
+          <End Role="PaperReference" Type="Self.PaperReference" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaperReference">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="PaperReferenceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_ProductStatus">
+          <End Role="ProductStatus" Type="Self.ProductStatus" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductStatus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_ProductType">
+          <End Role="ProductType" Type="Self.ProductType" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ProductTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Rating">
+          <End Role="Rating" Type="Self.Rating" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rating">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="RatingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_ReplaceOperator">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ReplaceOperatorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_RequestOperator">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="RequestOperatorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_ReturnOperator">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ReturnOperatorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_SellingOperator">
+          <End Role="Users" Type="Self.Users" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Users">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="SellingOperatorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_State">
+          <End Role="State" Type="Self.State" Multiplicity="1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductBrand_Brand">
+          <End Role="Brand" Type="Self.Brand" Multiplicity="1" />
+          <End Role="ProductBrand" Type="Self.ProductBrand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Brand">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductBrand">
+              <PropertyRef Name="BrandId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductBrand_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="ProductBrand" Type="Self.ProductBrand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductBrand">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductCategory_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="ProductCategory" Type="Self.ProductCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductCategory">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductCategory_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="ProductCategory" Type="Self.ProductCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductCategory">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductModel_Model">
+          <End Role="Model" Type="Self.Model" Multiplicity="1" />
+          <End Role="ProductModel" Type="Self.ProductModel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Model">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductModel">
+              <PropertyRef Name="ModelId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductModel_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="ProductModel" Type="Self.ProductModel" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductModel">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductTypeBrand_Brand">
+          <End Role="Brand" Type="Self.Brand" Multiplicity="1" />
+          <End Role="ProductTypeBrand" Type="Self.ProductTypeBrand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Brand">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductTypeBrand">
+              <PropertyRef Name="BrandId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductTypeBrand_ProductType">
+          <End Role="ProductType" Type="Self.ProductType" Multiplicity="1" />
+          <End Role="ProductTypeBrand" Type="Self.ProductTypeBrand" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductTypeBrand">
+              <PropertyRef Name="ProductTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductTypeCategory_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="ProductTypeCategory" Type="Self.ProductTypeCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductTypeCategory">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductTypeCategory_ProductType">
+          <End Role="ProductType" Type="Self.ProductType" Multiplicity="1" />
+          <End Role="ProductTypeCategory" Type="Self.ProductTypeCategory" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductTypeCategory">
+              <PropertyRef Name="ProductTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductYear_Product">
+          <End Role="Product" Type="Self.Product" Multiplicity="1" />
+          <End Role="ProductYear" Type="Self.ProductYear" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductYear">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductYear_Year">
+          <End Role="Year" Type="Self.Year" Multiplicity="1" />
+          <End Role="ProductYear" Type="Self.ProductYear" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Year">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductYear">
+              <PropertyRef Name="YearId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SparePartsModelStoreContainer">
+          <EntitySet Name="Attachment" EntityType="Self.Attachment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Brand" EntityType="Self.Brand" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="BrandModel" EntityType="Self.BrandModel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Customer" EntityType="Self.Customer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CustomerType" EntityType="Self.CustomerType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Model" EntityType="Self.Model" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ModelSubModel" EntityType="Self.ModelSubModel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PaperReference" EntityType="Self.PaperReference" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductBrand" EntityType="Self.ProductBrand" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductCategory" EntityType="Self.ProductCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductModel" EntityType="Self.ProductModel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductStatus" EntityType="Self.ProductStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductType" EntityType="Self.ProductType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductTypeBrand" EntityType="Self.ProductTypeBrand" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductTypeCategory" EntityType="Self.ProductTypeCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductYear" EntityType="Self.ProductYear" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rating" EntityType="Self.Rating" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="State" EntityType="Self.State" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SubModel" EntityType="Self.SubModel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Year" EntityType="Self.Year" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ActiveCategoriesView" EntityType="Self.ActiveCategoriesView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ActiveCategoriesView].[Id] AS [Id], 
+    [ActiveCategoriesView].[Name] AS [Name], 
+    [ActiveCategoriesView].[ParentId] AS [ParentId]
+    FROM [dbo].[ActiveCategoriesView] AS [ActiveCategoriesView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BrandView" EntityType="Self.BrandView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BrandView].[ProductTypeId] AS [ProductTypeId], 
+    [BrandView].[ProductType] AS [ProductType], 
+    [BrandView].[BrandId] AS [BrandId], 
+    [BrandView].[Brand] AS [Brand], 
+    [BrandView].[Model] AS [Model]
+    FROM [dbo].[BrandView] AS [BrandView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="BrandViewForUI" EntityType="Self.BrandViewForUI" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [BrandViewForUI].[ProductTypeId] AS [ProductTypeId], 
+    [BrandViewForUI].[ProductType] AS [ProductType], 
+    [BrandViewForUI].[BrandId] AS [BrandId], 
+    [BrandViewForUI].[Brand] AS [Brand], 
+    [BrandViewForUI].[Models] AS [Models]
+    FROM [dbo].[BrandViewForUI] AS [BrandViewForUI]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="CategoryView" EntityType="Self.CategoryView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [CategoryView].[Id] AS [Id], 
+    [CategoryView].[Category] AS [Category], 
+    [CategoryView].[ParentId] AS [ParentId], 
+    [CategoryView].[SubCategory1Id] AS [SubCategory1Id], 
+    [CategoryView].[SubCategory1] AS [SubCategory1], 
+    [CategoryView].[SubCategory1ParentId] AS [SubCategory1ParentId], 
+    [CategoryView].[SubCategory2Id] AS [SubCategory2Id], 
+    [CategoryView].[SubCategory2] AS [SubCategory2], 
+    [CategoryView].[SubCategory2ParentId] AS [SubCategory2ParentId]
+    FROM [dbo].[CategoryView] AS [CategoryView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="LocationView" EntityType="Self.LocationView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [LocationView].[Id] AS [Id], 
+    [LocationView].[Location] AS [Location]
+    FROM [dbo].[LocationView] AS [LocationView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ModelView" EntityType="Self.ModelView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ModelView].[Id] AS [Id], 
+    [ModelView].[Model] AS [Model], 
+    [ModelView].[SubModelId] AS [SubModelId], 
+    [ModelView].[SubModel] AS [SubModel]
+    FROM [dbo].[ModelView] AS [ModelView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ProductTypeBrandView" EntityType="Self.ProductTypeBrandView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ProductTypeBrandView].[ProductTypeId] AS [ProductTypeId], 
+    [ProductTypeBrandView].[ProductType] AS [ProductType], 
+    [ProductTypeBrandView].[Brands] AS [Brands]
+    FROM [dbo].[ProductTypeBrandView] AS [ProductTypeBrandView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ProductTypeView" EntityType="Self.ProductTypeView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ProductTypeView].[Id] AS [Id], 
+    [ProductTypeView].[Name] AS [Name], 
+    [ProductTypeView].[Brands] AS [Brands], 
+    [ProductTypeView].[Categories] AS [Categories]
+    FROM [dbo].[ProductTypeView] AS [ProductTypeView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ProductView" EntityType="Self.ProductView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ProductView].[ProductId] AS [ProductId], 
+    [ProductView].[ProductName] AS [ProductName], 
+    [ProductView].[Status] AS [Status], 
+    [ProductView].[StatusName] AS [StatusName], 
+    [ProductView].[SellPrice] AS [SellPrice], 
+    [ProductView].[BuyingPrice] AS [BuyingPrice], 
+    [ProductView].[Brand] AS [Brand], 
+    [ProductView].[Country] AS [Country], 
+    [ProductView].[City] AS [City], 
+    [ProductView].[Model] AS [Model], 
+    [ProductView].[Category] AS [Category], 
+    [ProductView].[Years] AS [Years], 
+    [ProductView].[Item] AS [Item], 
+    [ProductView].[VIN] AS [VIN], 
+    [ProductView].[ProductType] AS [ProductType], 
+    [ProductView].[State] AS [State], 
+    [ProductView].[Sold] AS [Sold], 
+    [ProductView].[HasOrder] AS [HasOrder], 
+    [ProductView].[IsReimbursed] AS [IsReimbursed], 
+    [ProductView].[IsReplace] AS [IsReplace], 
+    [ProductView].[IsReturn] AS [IsReturn]
+    FROM [dbo].[ProductView] AS [ProductView]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Attachment_Product" Association="Self.FK_Attachment_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Attachment" EntitySet="Attachment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BrandModel_Brand" Association="Self.FK_BrandModel_Brand">
+            <End Role="Brand" EntitySet="Brand" />
+            <End Role="BrandModel" EntitySet="BrandModel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BrandModel_Model" Association="Self.FK_BrandModel_Model">
+            <End Role="Model" EntitySet="Model" />
+            <End Role="BrandModel" EntitySet="BrandModel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Category_SubCategory" Association="Self.FK_Category_SubCategory">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Category1" EntitySet="Category" />
+          </AssociationSet>
+          <AssociationSet Name="FK_City_Country" Association="Self.FK_City_Country">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="City" EntitySet="City" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_CustomerType" Association="Self.FK_Customer_CustomerType">
+            <End Role="CustomerType" EntitySet="CustomerType" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ModelSubModel_Model" Association="Self.FK_ModelSubModel_Model">
+            <End Role="Model" EntitySet="Model" />
+            <End Role="ModelSubModel" EntitySet="ModelSubModel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ModelSubModel_SubModel" Association="Self.FK_ModelSubModel_SubModel">
+            <End Role="SubModel" EntitySet="SubModel" />
+            <End Role="ModelSubModel" EntitySet="ModelSubModel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Buyer" Association="Self.FK_Product_Buyer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_City" Association="Self.FK_Product_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_ComplaintOperator" Association="Self.FK_Product_ComplaintOperator">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_CustomerCreator" Association="Self.FK_Product_CustomerCreator">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Item" Association="Self.FK_Product_Item">
+            <End Role="Item" EntitySet="Item" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_OperatorCreator" Association="Self.FK_Product_OperatorCreator">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_OrderCustomer" Association="Self.FK_Product_OrderCustomer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_OrderOperator" Association="Self.FK_Product_OrderOperator">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_PaperReference" Association="Self.FK_Product_PaperReference">
+            <End Role="PaperReference" EntitySet="PaperReference" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_ProductStatus" Association="Self.FK_Product_ProductStatus">
+            <End Role="ProductStatus" EntitySet="ProductStatus" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_ProductType" Association="Self.FK_Product_ProductType">
+            <End Role="ProductType" EntitySet="ProductType" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Rating" Association="Self.FK_Product_Rating">
+            <End Role="Rating" EntitySet="Rating" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_ReplaceOperator" Association="Self.FK_Product_ReplaceOperator">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_RequestOperator" Association="Self.FK_Product_RequestOperator">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_ReturnOperator" Association="Self.FK_Product_ReturnOperator">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_SellingOperator" Association="Self.FK_Product_SellingOperator">
+            <End Role="Users" EntitySet="Users" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_State" Association="Self.FK_Product_State">
+            <End Role="State" EntitySet="State" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductBrand_Brand" Association="Self.FK_ProductBrand_Brand">
+            <End Role="Brand" EntitySet="Brand" />
+            <End Role="ProductBrand" EntitySet="ProductBrand" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductBrand_Product" Association="Self.FK_ProductBrand_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductBrand" EntitySet="ProductBrand" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductCategory_Category" Association="Self.FK_ProductCategory_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="ProductCategory" EntitySet="ProductCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductCategory_Product" Association="Self.FK_ProductCategory_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductCategory" EntitySet="ProductCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductModel_Model" Association="Self.FK_ProductModel_Model">
+            <End Role="Model" EntitySet="Model" />
+            <End Role="ProductModel" EntitySet="ProductModel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductModel_Product" Association="Self.FK_ProductModel_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductModel" EntitySet="ProductModel" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductTypeBrand_Brand" Association="Self.FK_ProductTypeBrand_Brand">
+            <End Role="Brand" EntitySet="Brand" />
+            <End Role="ProductTypeBrand" EntitySet="ProductTypeBrand" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductTypeBrand_ProductType" Association="Self.FK_ProductTypeBrand_ProductType">
+            <End Role="ProductType" EntitySet="ProductType" />
+            <End Role="ProductTypeBrand" EntitySet="ProductTypeBrand" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductTypeCategory_Category" Association="Self.FK_ProductTypeCategory_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="ProductTypeCategory" EntitySet="ProductTypeCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductTypeCategory_ProductType" Association="Self.FK_ProductTypeCategory_ProductType">
+            <End Role="ProductType" EntitySet="ProductType" />
+            <End Role="ProductTypeCategory" EntitySet="ProductTypeCategory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductYear_Product" Association="Self.FK_ProductYear_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductYear" EntitySet="ProductYear" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductYear_Year" Association="Self.FK_ProductYear_Year">
+            <End Role="Year" EntitySet="Year" />
+            <End Role="ProductYear" EntitySet="ProductYear" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SpareParts.DataAccess.Models" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DataModelEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Attachment" EntityType="SpareParts.DataAccess.Models.Attachment" />
+          <EntitySet Name="City" EntityType="SpareParts.DataAccess.Models.City" />
+          <EntitySet Name="Country" EntityType="SpareParts.DataAccess.Models.Country" />
+          <EntitySet Name="Customer" EntityType="SpareParts.DataAccess.Models.Customer" />
+          <EntitySet Name="CustomerType" EntityType="SpareParts.DataAccess.Models.CustomerType" />
+          <EntitySet Name="Item" EntityType="SpareParts.DataAccess.Models.Item" />
+          <EntitySet Name="PaperReference" EntityType="SpareParts.DataAccess.Models.PaperReference" />
+          <EntitySet Name="ProductYear" EntityType="SpareParts.DataAccess.Models.ProductYear" />
+          <EntitySet Name="Rating" EntityType="SpareParts.DataAccess.Models.Rating" />
+          <EntitySet Name="State" EntityType="SpareParts.DataAccess.Models.State" />
+          <EntitySet Name="Year" EntityType="SpareParts.DataAccess.Models.Year" />
+          <AssociationSet Name="FK_City_Country" Association="SpareParts.DataAccess.Models.FK_City_Country">
+            <End Role="Country" EntitySet="Country" />
+            <End Role="City" EntitySet="City" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Customer_CustomerType" Association="SpareParts.DataAccess.Models.FK_Customer_CustomerType">
+            <End Role="CustomerType" EntitySet="CustomerType" />
+            <End Role="Customer" EntitySet="Customer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductYear_Year" Association="SpareParts.DataAccess.Models.FK_ProductYear_Year">
+            <End Role="Year" EntitySet="Year" />
+            <End Role="ProductYear" EntitySet="ProductYear" />
+          </AssociationSet>
+          <EntitySet Name="Operator" EntityType="SpareParts.DataAccess.Models.Operator" />
+          <EntitySet Name="Brand" EntityType="SpareParts.DataAccess.Models.Brand" />
+          <EntitySet Name="Category" EntityType="SpareParts.DataAccess.Models.Category" />
+          <EntitySet Name="Model" EntityType="SpareParts.DataAccess.Models.Model" />
+          <EntitySet Name="ProductType" EntityType="SpareParts.DataAccess.Models.ProductType" />
+          <EntitySet Name="SubModel" EntityType="SpareParts.DataAccess.Models.SubModel" />
+          <AssociationSet Name="BrandModel" Association="SpareParts.DataAccess.Models.BrandModel">
+            <End Role="Brand" EntitySet="Brand" />
+            <End Role="Model" EntitySet="Model" />
+          </AssociationSet>
+          <AssociationSet Name="ModelSubModel" Association="SpareParts.DataAccess.Models.ModelSubModel">
+            <End Role="Model" EntitySet="Model" />
+            <End Role="SubModel" EntitySet="SubModel" />
+          </AssociationSet>
+          <AssociationSet Name="ProductTypeBrand" Association="SpareParts.DataAccess.Models.ProductTypeBrand">
+            <End Role="Brand" EntitySet="Brand" />
+            <End Role="ProductType" EntitySet="ProductType" />
+          </AssociationSet>
+          <AssociationSet Name="ProductTypeCategory" Association="SpareParts.DataAccess.Models.ProductTypeCategory">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="ProductType" EntitySet="ProductType" />
+          </AssociationSet>
+          <EntitySet Name="BrandView" EntityType="SpareParts.DataAccess.Models.BrandView" />
+          <EntitySet Name="BrandViewForUI" EntityType="SpareParts.DataAccess.Models.BrandViewForUI" />
+          <EntitySet Name="LocationView" EntityType="SpareParts.DataAccess.Models.LocationView" />
+          <AssociationSet Name="FK_Category_SubCategory" Association="SpareParts.DataAccess.Models.FK_Category_SubCategory">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Category1" EntitySet="Category" />
+          </AssociationSet>
+          <EntitySet Name="Product" EntityType="SpareParts.DataAccess.Models.Product" />
+          <AssociationSet Name="FK_Attachment_Product" Association="SpareParts.DataAccess.Models.FK_Attachment_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="Attachment" EntitySet="Attachment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_City" Association="SpareParts.DataAccess.Models.FK_Product_City">
+            <End Role="City" EntitySet="City" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Buyer" Association="SpareParts.DataAccess.Models.FK_Product_Buyer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_CustomerCreator" Association="SpareParts.DataAccess.Models.FK_Product_CustomerCreator">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_OrderCustomer" Association="SpareParts.DataAccess.Models.FK_Product_OrderCustomer">
+            <End Role="Customer" EntitySet="Customer" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Item" Association="SpareParts.DataAccess.Models.FK_Product_Item">
+            <End Role="Item" EntitySet="Item" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_PaperReference" Association="SpareParts.DataAccess.Models.FK_Product_PaperReference">
+            <End Role="PaperReference" EntitySet="PaperReference" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_ComplaintOperator" Association="SpareParts.DataAccess.Models.FK_Product_ComplaintOperator">
+            <End Role="Operator" EntitySet="Operator" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_OperatorCreator" Association="SpareParts.DataAccess.Models.FK_Product_OperatorCreator">
+            <End Role="Operator" EntitySet="Operator" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_OrderOperator" Association="SpareParts.DataAccess.Models.FK_Product_OrderOperator">
+            <End Role="Operator" EntitySet="Operator" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_ProductType" Association="SpareParts.DataAccess.Models.FK_Product_ProductType">
+            <End Role="ProductType" EntitySet="ProductType" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Rating" Association="SpareParts.DataAccess.Models.FK_Product_Rating">
+            <End Role="Rating" EntitySet="Rating" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_ReplaceOperator" Association="SpareParts.DataAccess.Models.FK_Product_ReplaceOperator">
+            <End Role="Operator" EntitySet="Operator" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_RequestOperator" Association="SpareParts.DataAccess.Models.FK_Product_RequestOperator">
+            <End Role="Operator" EntitySet="Operator" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_ReturnOperator" Association="SpareParts.DataAccess.Models.FK_Product_ReturnOperator">
+            <End Role="Operator" EntitySet="Operator" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_SellingOperator" Association="SpareParts.DataAccess.Models.FK_Product_SellingOperator">
+            <End Role="Operator" EntitySet="Operator" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_State" Association="SpareParts.DataAccess.Models.FK_Product_State">
+            <End Role="State" EntitySet="State" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ProductYear_Product" Association="SpareParts.DataAccess.Models.FK_ProductYear_Product">
+            <End Role="Product" EntitySet="Product" />
+            <End Role="ProductYear" EntitySet="ProductYear" />
+          </AssociationSet>
+          <AssociationSet Name="ProductBrand" Association="SpareParts.DataAccess.Models.ProductBrand">
+            <End Role="Brand" EntitySet="Brand" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="ProductCategory" Association="SpareParts.DataAccess.Models.ProductCategory">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <AssociationSet Name="ProductModel" Association="SpareParts.DataAccess.Models.ProductModel">
+            <End Role="Model" EntitySet="Model" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          <EntitySet Name="ProductTypeView" EntityType="SpareParts.DataAccess.Models.ProductTypeView" />
+          <EntitySet Name="ModelView" EntityType="SpareParts.DataAccess.Models.ModelView" />
+          <EntitySet Name="CategoryView" EntityType="SpareParts.DataAccess.Models.CategoryView" />
+          <EntitySet Name="ActiveCategoriesView" EntityType="SpareParts.DataAccess.Models.ActiveCategoriesView" />
+          <EntitySet Name="ProductTypeBrandView" EntityType="SpareParts.DataAccess.Models.ProductTypeBrandView" />
+          <EntitySet Name="ProductView" EntityType="SpareParts.DataAccess.Models.ProductView" />
+          <EntitySet Name="ProductStatus" EntityType="SpareParts.DataAccess.Models.ProductStatus" />
+          <AssociationSet Name="FK_Product_ProductStatus" Association="SpareParts.DataAccess.Models.FK_Product_ProductStatus">
+            <End Role="ProductStatus" EntitySet="ProductStatus" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="Attachment">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FileName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Extension" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="MimeType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Content" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Product" Relationship="SpareParts.DataAccess.Models.FK_Attachment_Product" FromRole="Attachment" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="City">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CountryId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Country" Relationship="SpareParts.DataAccess.Models.FK_City_Country" FromRole="City" ToRole="Country" />
+          <NavigationProperty Name="Product" Relationship="SpareParts.DataAccess.Models.FK_Product_City" FromRole="City" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Country">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="City" Relationship="SpareParts.DataAccess.Models.FK_City_Country" FromRole="Country" ToRole="City" />
+        </EntityType>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Phone" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerTypeId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CustomerType" Relationship="SpareParts.DataAccess.Models.FK_Customer_CustomerType" FromRole="Customer" ToRole="CustomerType" />
+          <NavigationProperty Name="Product" Relationship="SpareParts.DataAccess.Models.FK_Product_Buyer" FromRole="Customer" ToRole="Product" />
+          <NavigationProperty Name="Product1" Relationship="SpareParts.DataAccess.Models.FK_Product_CustomerCreator" FromRole="Customer" ToRole="Product" />
+          <NavigationProperty Name="Product2" Relationship="SpareParts.DataAccess.Models.FK_Product_OrderCustomer" FromRole="Customer" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="CustomerType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Customer" Relationship="SpareParts.DataAccess.Models.FK_Customer_CustomerType" FromRole="CustomerType" ToRole="Customer" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Product" Relationship="SpareParts.DataAccess.Models.FK_Product_Item" FromRole="Item" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="PaperReference">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Product" Relationship="SpareParts.DataAccess.Models.FK_Product_PaperReference" FromRole="PaperReference" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="ProductYear">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="YearId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Year" Relationship="SpareParts.DataAccess.Models.FK_ProductYear_Year" FromRole="ProductYear" ToRole="Year" />
+          <NavigationProperty Name="Product" Relationship="SpareParts.DataAccess.Models.FK_ProductYear_Product" FromRole="ProductYear" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Rating">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <NavigationProperty Name="Product" Relationship="SpareParts.DataAccess.Models.FK_Product_Rating" FromRole="Rating" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="State">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Product" Relationship="SpareParts.DataAccess.Models.FK_Product_State" FromRole="State" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Year">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Year1" Type="Int16" />
+          <NavigationProperty Name="ProductYear" Relationship="SpareParts.DataAccess.Models.FK_ProductYear_Year" FromRole="Year" ToRole="ProductYear" />
+        </EntityType>
+        <Association Name="FK_City_Country">
+          <End Type="SpareParts.DataAccess.Models.Country" Role="Country" Multiplicity="1" />
+          <End Type="SpareParts.DataAccess.Models.City" Role="City" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Country">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="City">
+              <PropertyRef Name="CountryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Customer_CustomerType">
+          <End Type="SpareParts.DataAccess.Models.CustomerType" Role="CustomerType" Multiplicity="1" />
+          <End Type="SpareParts.DataAccess.Models.Customer" Role="Customer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CustomerType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Customer">
+              <PropertyRef Name="CustomerTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductYear_Year">
+          <End Type="SpareParts.DataAccess.Models.Year" Role="Year" Multiplicity="1" />
+          <End Type="SpareParts.DataAccess.Models.ProductYear" Role="ProductYear" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Year">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductYear">
+              <PropertyRef Name="YearId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Operator">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProfilesId" Type="Int32" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Enabled" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="ComplaintOperator" Relationship="SpareParts.DataAccess.Models.FK_Product_ComplaintOperator" FromRole="Operator" ToRole="Product" />
+          <NavigationProperty Name="CreatorOperator" Relationship="SpareParts.DataAccess.Models.FK_Product_OperatorCreator" FromRole="Operator" ToRole="Product" />
+          <NavigationProperty Name="OrderOperator" Relationship="SpareParts.DataAccess.Models.FK_Product_OrderOperator" FromRole="Operator" ToRole="Product" />
+          <NavigationProperty Name="ReplaceOperator" Relationship="SpareParts.DataAccess.Models.FK_Product_ReplaceOperator" FromRole="Operator" ToRole="Product" />
+          <NavigationProperty Name="RequestOperator" Relationship="SpareParts.DataAccess.Models.FK_Product_RequestOperator" FromRole="Operator" ToRole="Product" />
+          <NavigationProperty Name="ReturnOperator" Relationship="SpareParts.DataAccess.Models.FK_Product_ReturnOperator" FromRole="Operator" ToRole="Product" />
+          <NavigationProperty Name="SellingOperator" Relationship="SpareParts.DataAccess.Models.FK_Product_SellingOperator" FromRole="Operator" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Brand">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Model" Relationship="SpareParts.DataAccess.Models.BrandModel" FromRole="Brand" ToRole="Model" />
+          <NavigationProperty Name="ProductType" Relationship="SpareParts.DataAccess.Models.ProductTypeBrand" FromRole="Brand" ToRole="ProductType" />
+          <NavigationProperty Name="Product" Relationship="SpareParts.DataAccess.Models.ProductBrand" FromRole="Brand" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ProductType" Relationship="SpareParts.DataAccess.Models.ProductTypeCategory" FromRole="Category" ToRole="ProductType" />
+          <Property Name="ParentId" Type="Int32" />
+          <NavigationProperty Name="Parent" Relationship="SpareParts.DataAccess.Models.FK_Category_SubCategory" FromRole="Category" ToRole="Category1" />
+          <NavigationProperty Name="Product" Relationship="SpareParts.DataAccess.Models.ProductCategory" FromRole="Category" ToRole="Product" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Model">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Brand" Relationship="SpareParts.DataAccess.Models.BrandModel" FromRole="Model" ToRole="Brand" />
+          <NavigationProperty Name="SubModel" Relationship="SpareParts.DataAccess.Models.ModelSubModel" FromRole="Model" ToRole="SubModel" />
+          <NavigationProperty Name="Product" Relationship="SpareParts.DataAccess.Models.ProductModel" FromRole="Model" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="ProductType">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Brand" Relationship="SpareParts.DataAccess.Models.ProductTypeBrand" FromRole="ProductType" ToRole="Brand" />
+          <NavigationProperty Name="Category" Relationship="SpareParts.DataAccess.Models.ProductTypeCategory" FromRole="ProductType" ToRole="Category" />
+          <NavigationProperty Name="Product" Relationship="SpareParts.DataAccess.Models.FK_Product_ProductType" FromRole="ProductType" ToRole="Product" />
+        </EntityType>
+        <EntityType Name="SubModel">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Model" Relationship="SpareParts.DataAccess.Models.ModelSubModel" FromRole="SubModel" ToRole="Model" />
+        </EntityType>
+        <Association Name="BrandModel">
+          <End Type="SpareParts.DataAccess.Models.Brand" Role="Brand" Multiplicity="*" />
+          <End Type="SpareParts.DataAccess.Models.Model" Role="Model" Multiplicity="*" />
+        </Association>
+        <Association Name="ModelSubModel">
+          <End Type="SpareParts.DataAccess.Models.Model" Role="Model" Multiplicity="*" />
+          <End Type="SpareParts.DataAccess.Models.SubModel" Role="SubModel" Multiplicity="*" />
+        </Association>
+        <Association Name="ProductTypeBrand">
+          <End Type="SpareParts.DataAccess.Models.Brand" Role="Brand" Multiplicity="*" />
+          <End Type="SpareParts.DataAccess.Models.ProductType" Role="ProductType" Multiplicity="*" />
+        </Association>
+        <Association Name="ProductTypeCategory">
+          <End Type="SpareParts.DataAccess.Models.Category" Role="Category" Multiplicity="*" />
+          <End Type="SpareParts.DataAccess.Models.ProductType" Role="ProductType" Multiplicity="*" />
+        </Association>
+        <EntityType Name="BrandView">
+          <Key>
+            <PropertyRef Name="ProductTypeId" />
+            <PropertyRef Name="ProductType" />
+            <PropertyRef Name="BrandId" />
+            <PropertyRef Name="Brand" />
+            <PropertyRef Name="Model" />
+          </Key>
+          <Property Name="ProductTypeId" Type="Int32" Nullable="false" />
+          <Property Name="ProductType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BrandId" Type="Int32" Nullable="false" />
+          <Property Name="Brand" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Model" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="BrandViewForUI">
+          <Key>
+            <PropertyRef Name="ProductTypeId" />
+            <PropertyRef Name="ProductType" />
+            <PropertyRef Name="BrandId" />
+            <PropertyRef Name="Brand" />
+          </Key>
+          <Property Name="ProductTypeId" Type="Int32" Nullable="false" />
+          <Property Name="ProductType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="BrandId" Type="Int32" Nullable="false" />
+          <Property Name="Brand" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Models" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="LocationView">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Location" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Location" Type="String" Nullable="false" MaxLength="83" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_Category_SubCategory">
+          <End Type="SpareParts.DataAccess.Models.Category" Role="Category" Multiplicity="0..1" />
+          <End Type="SpareParts.DataAccess.Models.Category" Role="Category1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Category1">
+              <PropertyRef Name="ParentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="ItemId" Type="Int32" Nullable="false" />
+          <Property Name="ProductTypeId" Type="Int32" Nullable="false" />
+          <Property Name="PaperReferenceId" Type="Int32" />
+          <Property Name="LocationId" Type="Int32" Nullable="false" />
+          <Property Name="StockLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CustomerId" Type="Int32" Nullable="false" />
+          <Property Name="OperatorId" Type="Int32" Nullable="false" />
+          <Property Name="RatingId" Type="Int32" />
+          <Property Name="DepositBuyDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="BuyingPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Sold" Type="Boolean" Nullable="false" />
+          <Property Name="SellPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="SellingOperatorId" Type="Int32" />
+          <Property Name="BuyerId" Type="Int32" />
+          <Property Name="Mecanic" Type="Boolean" />
+          <Property Name="SellingDate" Type="DateTime" Precision="3" />
+          <Property Name="VehicleIdentificationNumber" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="CarIdentificationNumber" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="HasComplaint" Type="Boolean" />
+          <Property Name="ComplaintOperatorId" Type="Int32" />
+          <Property Name="ComplaintDate" Type="DateTime" Precision="3" />
+          <Property Name="IsReturn" Type="Boolean" />
+          <Property Name="ReturnOperatorId" Type="Int32" />
+          <Property Name="ReturnDate" Type="DateTime" Precision="3" />
+          <Property Name="IsReplace" Type="Boolean" />
+          <Property Name="ReplaceOperatorId" Type="Int32" />
+          <Property Name="ReplaceDate" Type="DateTime" Precision="3" />
+          <Property Name="ReplacedProductId" Type="Int32" />
+          <Property Name="IsReimbursed" Type="Boolean" />
+          <Property Name="IsAvailable" Type="Boolean" />
+          <Property Name="RequestNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="RequestDate" Type="DateTime" Precision="3" />
+          <Property Name="RequestOperatorId" Type="Int32" />
+          <Property Name="HasOrder" Type="Boolean" />
+          <Property Name="OrderNumber" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="OrderDate" Type="DateTime" Precision="3" />
+          <Property Name="OrderOperatorId" Type="Int32" />
+          <Property Name="OrderCustomerId" Type="Int32" />
+          <Property Name="OrderSellingPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="AdvancePaymentAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="EstimatedDeliveryDate" Type="DateTime" Precision="3" />
+          <Property Name="FinalDate" Type="DateTime" Precision="3" />
+          <Property Name="BalanceAmount" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="StateId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Attachment" Relationship="SpareParts.DataAccess.Models.FK_Attachment_Product" FromRole="Product" ToRole="Attachment" />
+          <NavigationProperty Name="City" Relationship="SpareParts.DataAccess.Models.FK_Product_City" FromRole="Product" ToRole="City" />
+          <NavigationProperty Name="ProductBuyer" Relationship="SpareParts.DataAccess.Models.FK_Product_Buyer" FromRole="Product" ToRole="Customer" />
+          <NavigationProperty Name="Customer" Relationship="SpareParts.DataAccess.Models.FK_Product_CustomerCreator" FromRole="Product" ToRole="Customer" />
+          <NavigationProperty Name="OrderCustomer" Relationship="SpareParts.DataAccess.Models.FK_Product_OrderCustomer" FromRole="Product" ToRole="Customer" />
+          <NavigationProperty Name="Item" Relationship="SpareParts.DataAccess.Models.FK_Product_Item" FromRole="Product" ToRole="Item" />
+          <NavigationProperty Name="PaperReference" Relationship="SpareParts.DataAccess.Models.FK_Product_PaperReference" FromRole="Product" ToRole="PaperReference" />
+          <NavigationProperty Name="ComplaintOperator" Relationship="SpareParts.DataAccess.Models.FK_Product_ComplaintOperator" FromRole="Product" ToRole="Operator" />
+          <NavigationProperty Name="CreateOperator" Relationship="SpareParts.DataAccess.Models.FK_Product_OperatorCreator" FromRole="Product" ToRole="Operator" />
+          <NavigationProperty Name="OrderOperator" Relationship="SpareParts.DataAccess.Models.FK_Product_OrderOperator" FromRole="Product" ToRole="Operator" />
+          <NavigationProperty Name="ProductType" Relationship="SpareParts.DataAccess.Models.FK_Product_ProductType" FromRole="Product" ToRole="ProductType" />
+          <NavigationProperty Name="Rating" Relationship="SpareParts.DataAccess.Models.FK_Product_Rating" FromRole="Product" ToRole="Rating" />
+          <NavigationProperty Name="ReplaceOperator" Relationship="SpareParts.DataAccess.Models.FK_Product_ReplaceOperator" FromRole="Product" ToRole="Operator" />
+          <NavigationProperty Name="RequestOperator" Relationship="SpareParts.DataAccess.Models.FK_Product_RequestOperator" FromRole="Product" ToRole="Operator" />
+          <NavigationProperty Name="ReturnOperator" Relationship="SpareParts.DataAccess.Models.FK_Product_ReturnOperator" FromRole="Product" ToRole="Operator" />
+          <NavigationProperty Name="SellingOperator" Relationship="SpareParts.DataAccess.Models.FK_Product_SellingOperator" FromRole="Product" ToRole="Operator" />
+          <NavigationProperty Name="State" Relationship="SpareParts.DataAccess.Models.FK_Product_State" FromRole="Product" ToRole="State" />
+          <NavigationProperty Name="ProductYear" Relationship="SpareParts.DataAccess.Models.FK_ProductYear_Product" FromRole="Product" ToRole="ProductYear" />
+          <NavigationProperty Name="Brands" Relationship="SpareParts.DataAccess.Models.ProductBrand" FromRole="Product" ToRole="Brand" />
+          <NavigationProperty Name="Categories" Relationship="SpareParts.DataAccess.Models.ProductCategory" FromRole="Product" ToRole="Category" />
+          <NavigationProperty Name="Models" Relationship="SpareParts.DataAccess.Models.ProductModel" FromRole="Product" ToRole="Model" />
+          <Property Name="StatusId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ProductStatus" Relationship="SpareParts.DataAccess.Models.FK_Product_ProductStatus" FromRole="Product" ToRole="ProductStatus" />
+        </EntityType>
+        <Association Name="FK_Attachment_Product">
+          <End Type="SpareParts.DataAccess.Models.Product" Role="Product" Multiplicity="1" />
+          <End Type="SpareParts.DataAccess.Models.Attachment" Role="Attachment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Attachment">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_City">
+          <End Type="SpareParts.DataAccess.Models.City" Role="City" Multiplicity="1" />
+          <End Type="SpareParts.DataAccess.Models.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="City">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="LocationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Buyer">
+          <End Type="SpareParts.DataAccess.Models.Customer" Role="Customer" Multiplicity="0..1" />
+          <End Type="SpareParts.DataAccess.Models.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="BuyerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_CustomerCreator">
+          <End Type="SpareParts.DataAccess.Models.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="SpareParts.DataAccess.Models.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_OrderCustomer">
+          <End Type="SpareParts.DataAccess.Models.Customer" Role="Customer" Multiplicity="0..1" />
+          <End Type="SpareParts.DataAccess.Models.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="OrderCustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Item">
+          <End Type="SpareParts.DataAccess.Models.Item" Role="Item" Multiplicity="1" />
+          <End Type="SpareParts.DataAccess.Models.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_PaperReference">
+          <End Type="SpareParts.DataAccess.Models.PaperReference" Role="PaperReference" Multiplicity="0..1" />
+          <End Type="SpareParts.DataAccess.Models.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaperReference">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="PaperReferenceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_ComplaintOperator">
+          <End Type="SpareParts.DataAccess.Models.Operator" Role="Operator" Multiplicity="0..1" />
+          <End Type="SpareParts.DataAccess.Models.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operator">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ComplaintOperatorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_OperatorCreator">
+          <End Type="SpareParts.DataAccess.Models.Operator" Role="Operator" Multiplicity="1" />
+          <End Type="SpareParts.DataAccess.Models.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operator">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="OperatorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_OrderOperator">
+          <End Type="SpareParts.DataAccess.Models.Operator" Role="Operator" Multiplicity="0..1" />
+          <End Type="SpareParts.DataAccess.Models.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operator">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="OrderOperatorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_ProductType">
+          <End Type="SpareParts.DataAccess.Models.ProductType" Role="ProductType" Multiplicity="1" />
+          <End Type="SpareParts.DataAccess.Models.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductType">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ProductTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_Rating">
+          <End Type="SpareParts.DataAccess.Models.Rating" Role="Rating" Multiplicity="0..1" />
+          <End Type="SpareParts.DataAccess.Models.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Rating">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="RatingId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_ReplaceOperator">
+          <End Type="SpareParts.DataAccess.Models.Operator" Role="Operator" Multiplicity="0..1" />
+          <End Type="SpareParts.DataAccess.Models.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operator">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ReplaceOperatorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_RequestOperator">
+          <End Type="SpareParts.DataAccess.Models.Operator" Role="Operator" Multiplicity="0..1" />
+          <End Type="SpareParts.DataAccess.Models.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operator">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="RequestOperatorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_ReturnOperator">
+          <End Type="SpareParts.DataAccess.Models.Operator" Role="Operator" Multiplicity="0..1" />
+          <End Type="SpareParts.DataAccess.Models.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operator">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="ReturnOperatorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_SellingOperator">
+          <End Type="SpareParts.DataAccess.Models.Operator" Role="Operator" Multiplicity="0..1" />
+          <End Type="SpareParts.DataAccess.Models.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Operator">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="SellingOperatorId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Product_State">
+          <End Type="SpareParts.DataAccess.Models.State" Role="State" Multiplicity="1" />
+          <End Type="SpareParts.DataAccess.Models.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="State">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="StateId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ProductYear_Product">
+          <End Type="SpareParts.DataAccess.Models.Product" Role="Product" Multiplicity="1" />
+          <End Type="SpareParts.DataAccess.Models.ProductYear" Role="ProductYear" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Product">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ProductYear">
+              <PropertyRef Name="ProductId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ProductBrand">
+          <End Type="SpareParts.DataAccess.Models.Brand" Role="Brand" Multiplicity="*" />
+          <End Type="SpareParts.DataAccess.Models.Product" Role="Product" Multiplicity="*" />
+        </Association>
+        <Association Name="ProductCategory">
+          <End Type="SpareParts.DataAccess.Models.Category" Role="Category" Multiplicity="*" />
+          <End Type="SpareParts.DataAccess.Models.Product" Role="Product" Multiplicity="*" />
+        </Association>
+        <Association Name="ProductModel">
+          <End Type="SpareParts.DataAccess.Models.Model" Role="Model" Multiplicity="*" />
+          <End Type="SpareParts.DataAccess.Models.Product" Role="Product" Multiplicity="*" />
+        </Association>
+        <EntityType Name="ProductTypeView">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Name" />
+            <PropertyRef Name="Brands" />
+            <PropertyRef Name="Categories" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Brands" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Categories" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ModelView">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Model" />
+            <PropertyRef Name="SubModelId" />
+            <PropertyRef Name="SubModel" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Model" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SubModelId" Type="Int32" Nullable="false" />
+          <Property Name="SubModel" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="CategoryView">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Category" />
+            <PropertyRef Name="SubCategory1Id" />
+            <PropertyRef Name="SubCategory1" />
+            <PropertyRef Name="SubCategory2Id" />
+            <PropertyRef Name="SubCategory2" />
+            <PropertyRef Name="SubCategory1ParentId" />
+            <PropertyRef Name="SubCategory2ParentId" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="Category" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SubCategory1Id" Type="Int32" Nullable="false" />
+          <Property Name="SubCategory1" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="SubCategory2Id" Type="Int32" Nullable="false" />
+          <Property Name="SubCategory2" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ParentId" Type="Int32" />
+          <Property Name="SubCategory1ParentId" Type="Int32" Nullable="false" />
+          <Property Name="SubCategory2ParentId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ActiveCategoriesView">
+          <Key>
+            <PropertyRef Name="Id" />
+            <PropertyRef Name="Name" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ParentId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="ProductTypeBrandView">
+          <Key>
+            <PropertyRef Name="ProductTypeId" />
+            <PropertyRef Name="ProductType" />
+            <PropertyRef Name="Brands" />
+          </Key>
+          <Property Name="ProductTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Brands" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ProductView">
+          <Key>
+            <PropertyRef Name="ProductId" />
+            <PropertyRef Name="SellPrice" />
+            <PropertyRef Name="BuyingPrice" />
+            <PropertyRef Name="Brand" />
+            <PropertyRef Name="Country" />
+            <PropertyRef Name="City" />
+            <PropertyRef Name="Model" />
+            <PropertyRef Name="Category" />
+            <PropertyRef Name="Years" />
+            <PropertyRef Name="Item" />
+            <PropertyRef Name="VIN" />
+            <PropertyRef Name="ProductType" />
+            <PropertyRef Name="State" />
+            <PropertyRef Name="Sold" />
+            <PropertyRef Name="HasOrder" />
+            <PropertyRef Name="IsReimbursed" />
+            <PropertyRef Name="IsReplace" />
+            <PropertyRef Name="IsReturn" />
+            <PropertyRef Name="Status" />
+            <PropertyRef Name="StatusName" />
+          </Key>
+          <Property Name="ProductId" Type="Int32" Nullable="false" />
+          <Property Name="ProductName" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="SellPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="BuyingPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Brand" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Model" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Category" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Years" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Item" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="VIN" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="ProductType" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="State" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Sold" Type="Boolean" Nullable="false" />
+          <Property Name="HasOrder" Type="Boolean" Nullable="false" />
+          <Property Name="IsReimbursed" Type="Boolean" Nullable="false" />
+          <Property Name="IsReplace" Type="Boolean" Nullable="false" />
+          <Property Name="IsReturn" Type="Boolean" Nullable="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="StatusName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="ProductStatus">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Product" Relationship="SpareParts.DataAccess.Models.FK_Product_ProductStatus" FromRole="ProductStatus" ToRole="Product" />
+        </EntityType>
+        <Association Name="FK_Product_ProductStatus">
+          <End Type="SpareParts.DataAccess.Models.ProductStatus" Role="ProductStatus" Multiplicity="1" />
+          <End Type="SpareParts.DataAccess.Models.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ProductStatus">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SparePartsModelStoreContainer" CdmEntityContainer="DataModelEntities">
+          <EntitySetMapping Name="Attachment">
+            <EntityTypeMapping TypeName="SpareParts.DataAccess.Models.Attachment">
+              <MappingFragment StoreEntitySet="Attachment">
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="MimeType" ColumnName="MimeType" />
+                <ScalarProperty Name="Extension" ColumnName="Extension" />
+                <ScalarProperty Name="FileName" ColumnName="FileName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="City">
+            <EntityTypeMapping TypeName="SpareParts.DataAccess.Models.City">
+              <MappingFragment StoreEntitySet="City">
+                <ScalarProperty Name="CountryId" ColumnName="CountryId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Country">
+            <EntityTypeMapping TypeName="SpareParts.DataAccess.Models.Country">
+              <MappingFragment StoreEntitySet="Country">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Customer">
+            <EntityTypeMapping TypeName="SpareParts.DataAccess.Models.Customer">
+              <MappingFragment StoreEntitySet="Customer">
+                <ScalarProperty Name="CustomerTypeId" ColumnName="CustomerTypeId" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CustomerType">
+            <EntityTypeMapping TypeName="SpareParts.DataAccess.Models.CustomerType">
+              <MappingFragment StoreEntitySet="CustomerType">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Item">
+            <EntityTypeMapping TypeName="SpareParts.DataAccess.Models.Item">
+              <MappingFragment StoreEntitySet="Item">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaperReference">
+            <EntityTypeMapping TypeName="SpareParts.DataAccess.Models.PaperReference">
+              <MappingFragment StoreEntitySet="PaperReference">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductYear">
+            <EntityTypeMapping TypeName="SpareParts.DataAccess.Models.ProductYear">
+              <MappingFragment StoreEntitySet="ProductYear">
+                <ScalarProperty Name="YearId" ColumnName="YearId" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rating">
+            <EntityTypeMapping TypeName="SpareParts.DataAccess.Models.Rating">
+              <MappingFragment StoreEntitySet="Rating">
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="State">
+            <EntityTypeMapping TypeName="SpareParts.DataAccess.Models.State">
+              <MappingFragment StoreEntitySet="State">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Year">
+            <EntityTypeMapping TypeName="SpareParts.DataAccess.Models.Year">
+              <MappingFragment StoreEntitySet="Year">
+                <ScalarProperty Name="Year1" ColumnName="Year" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Operator">
+            <EntityTypeMapping TypeName="SpareParts.DataAccess.Models.Operator">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="ProfilesId" ColumnName="ProfilesId" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Brand">
+            <EntityTypeMapping TypeName="SpareParts.DataAccess.Models.Brand">
+              <MappingFragment StoreEntitySet="Brand">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Category">
+            <EntityTypeMapping TypeName="SpareParts.DataAccess.Models.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Model">
+            <EntityTypeMapping TypeName="SpareParts.DataAccess.Models.Model">
+              <MappingFragment StoreEntitySet="Model">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductType">
+            <EntityTypeMapping TypeName="SpareParts.DataAccess.Models.ProductType">
+              <MappingFragment StoreEntitySet="ProductType">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubModel">
+            <EntityTypeMapping TypeName="SpareParts.DataAccess.Models.SubModel">
+              <MappingFragment StoreEntitySet="SubModel">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="BrandModel" TypeName="SpareParts.DataAccess.Models.BrandModel" StoreEntitySet="BrandModel">
+            <EndProperty Name="Model">
+              <ScalarProperty Name="Id" ColumnName="ModelId" />
+            </EndProperty>
+            <EndProperty Name="Brand">
+              <ScalarProperty Name="Id" ColumnName="BrandId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="ModelSubModel" TypeName="SpareParts.DataAccess.Models.ModelSubModel" StoreEntitySet="ModelSubModel">
+            <EndProperty Name="SubModel">
+              <ScalarProperty Name="Id" ColumnName="SubModelId" />
+            </EndProperty>
+            <EndProperty Name="Model">
+              <ScalarProperty Name="Id" ColumnName="ModelId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="ProductTypeBrand" TypeName="SpareParts.DataAccess.Models.ProductTypeBrand" StoreEntitySet="ProductTypeBrand">
+            <EndProperty Name="ProductType">
+              <ScalarProperty Name="Id" ColumnName="ProductTypeId" />
+            </EndProperty>
+            <EndProperty Name="Brand">
+              <ScalarProperty Name="Id" ColumnName="BrandId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="ProductTypeCategory" TypeName="SpareParts.DataAccess.Models.ProductTypeCategory" StoreEntitySet="ProductTypeCategory">
+            <EndProperty Name="ProductType">
+              <ScalarProperty Name="Id" ColumnName="ProductTypeId" />
+            </EndProperty>
+            <EndProperty Name="Category">
+              <ScalarProperty Name="Id" ColumnName="CategoryId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="BrandView">
+            <EntityTypeMapping TypeName="SpareParts.DataAccess.Models.BrandView">
+              <MappingFragment StoreEntitySet="BrandView">
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="ProductTypeId" ColumnName="ProductTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="BrandViewForUI">
+            <EntityTypeMapping TypeName="SpareParts.DataAccess.Models.BrandViewForUI">
+              <MappingFragment StoreEntitySet="BrandViewForUI">
+                <ScalarProperty Name="Models" ColumnName="Models" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="BrandId" ColumnName="BrandId" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="ProductTypeId" ColumnName="ProductTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LocationView">
+            <EntityTypeMapping TypeName="SpareParts.DataAccess.Models.LocationView">
+              <MappingFragment StoreEntitySet="LocationView">
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Product">
+            <EntityTypeMapping TypeName="SpareParts.DataAccess.Models.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+                <ScalarProperty Name="StateId" ColumnName="StateId" />
+                <ScalarProperty Name="BalanceAmount" ColumnName="BalanceAmount" />
+                <ScalarProperty Name="FinalDate" ColumnName="FinalDate" />
+                <ScalarProperty Name="EstimatedDeliveryDate" ColumnName="EstimatedDeliveryDate" />
+                <ScalarProperty Name="AdvancePaymentAmount" ColumnName="AdvancePaymentAmount" />
+                <ScalarProperty Name="OrderSellingPrice" ColumnName="OrderSellingPrice" />
+                <ScalarProperty Name="OrderCustomerId" ColumnName="OrderCustomerId" />
+                <ScalarProperty Name="OrderOperatorId" ColumnName="OrderOperatorId" />
+                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+                <ScalarProperty Name="OrderNumber" ColumnName="OrderNumber" />
+                <ScalarProperty Name="HasOrder" ColumnName="HasOrder" />
+                <ScalarProperty Name="RequestOperatorId" ColumnName="RequestOperatorId" />
+                <ScalarProperty Name="RequestDate" ColumnName="RequestDate" />
+                <ScalarProperty Name="RequestNumber" ColumnName="RequestNumber" />
+                <ScalarProperty Name="IsAvailable" ColumnName="IsAvailable" />
+                <ScalarProperty Name="IsReimbursed" ColumnName="IsReimbursed" />
+                <ScalarProperty Name="ReplacedProductId" ColumnName="ReplacedProductId" />
+                <ScalarProperty Name="ReplaceDate" ColumnName="ReplaceDate" />
+                <ScalarProperty Name="ReplaceOperatorId" ColumnName="ReplaceOperatorId" />
+                <ScalarProperty Name="IsReplace" ColumnName="IsReplace" />
+                <ScalarProperty Name="ReturnDate" ColumnName="ReturnDate" />
+                <ScalarProperty Name="ReturnOperatorId" ColumnName="ReturnOperatorId" />
+                <ScalarProperty Name="IsReturn" ColumnName="IsReturn" />
+                <ScalarProperty Name="ComplaintDate" ColumnName="ComplaintDate" />
+                <ScalarProperty Name="ComplaintOperatorId" ColumnName="ComplaintOperatorId" />
+                <ScalarProperty Name="HasComplaint" ColumnName="HasComplaint" />
+                <ScalarProperty Name="CarIdentificationNumber" ColumnName="CarIdentificationNumber" />
+                <ScalarProperty Name="VehicleIdentificationNumber" ColumnName="VehicleIdentificationNumber" />
+                <ScalarProperty Name="SellingDate" ColumnName="SellingDate" />
+                <ScalarProperty Name="Mecanic" ColumnName="Mecanic" />
+                <ScalarProperty Name="BuyerId" ColumnName="BuyerId" />
+                <ScalarProperty Name="SellingOperatorId" ColumnName="SellingOperatorId" />
+                <ScalarProperty Name="SellPrice" ColumnName="SellPrice" />
+                <ScalarProperty Name="Sold" ColumnName="Sold" />
+                <ScalarProperty Name="BuyingPrice" ColumnName="BuyingPrice" />
+                <ScalarProperty Name="DepositBuyDate" ColumnName="DepositBuyDate" />
+                <ScalarProperty Name="RatingId" ColumnName="RatingId" />
+                <ScalarProperty Name="OperatorId" ColumnName="OperatorId" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="StockLocation" ColumnName="StockLocation" />
+                <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+                <ScalarProperty Name="PaperReferenceId" ColumnName="PaperReferenceId" />
+                <ScalarProperty Name="ProductTypeId" ColumnName="ProductTypeId" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="ProductBrand" TypeName="SpareParts.DataAccess.Models.ProductBrand" StoreEntitySet="ProductBrand">
+            <EndProperty Name="Product">
+              <ScalarProperty Name="Id" ColumnName="ProductId" />
+            </EndProperty>
+            <EndProperty Name="Brand">
+              <ScalarProperty Name="Id" ColumnName="BrandId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="ProductCategory" TypeName="SpareParts.DataAccess.Models.ProductCategory" StoreEntitySet="ProductCategory">
+            <EndProperty Name="Product">
+              <ScalarProperty Name="Id" ColumnName="ProductId" />
+            </EndProperty>
+            <EndProperty Name="Category">
+              <ScalarProperty Name="Id" ColumnName="CategoryId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="ProductModel" TypeName="SpareParts.DataAccess.Models.ProductModel" StoreEntitySet="ProductModel">
+            <EndProperty Name="Product">
+              <ScalarProperty Name="Id" ColumnName="ProductId" />
+            </EndProperty>
+            <EndProperty Name="Model">
+              <ScalarProperty Name="Id" ColumnName="ModelId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="ProductTypeView">
+            <EntityTypeMapping TypeName="SpareParts.DataAccess.Models.ProductTypeView">
+              <MappingFragment StoreEntitySet="ProductTypeView">
+                <ScalarProperty Name="Categories" ColumnName="Categories" />
+                <ScalarProperty Name="Brands" ColumnName="Brands" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ModelView">
+            <EntityTypeMapping TypeName="SpareParts.DataAccess.Models.ModelView">
+              <MappingFragment StoreEntitySet="ModelView">
+                <ScalarProperty Name="SubModel" ColumnName="SubModel" />
+                <ScalarProperty Name="SubModelId" ColumnName="SubModelId" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CategoryView">
+            <EntityTypeMapping TypeName="SpareParts.DataAccess.Models.CategoryView">
+              <MappingFragment StoreEntitySet="CategoryView">
+                <ScalarProperty Name="SubCategory2ParentId" ColumnName="SubCategory2ParentId" />
+                <ScalarProperty Name="SubCategory1ParentId" ColumnName="SubCategory1ParentId" />
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="SubCategory2" ColumnName="SubCategory2" />
+                <ScalarProperty Name="SubCategory2Id" ColumnName="SubCategory2Id" />
+                <ScalarProperty Name="SubCategory1" ColumnName="SubCategory1" />
+                <ScalarProperty Name="SubCategory1Id" ColumnName="SubCategory1Id" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ActiveCategoriesView">
+            <EntityTypeMapping TypeName="SpareParts.DataAccess.Models.ActiveCategoriesView">
+              <MappingFragment StoreEntitySet="ActiveCategoriesView">
+                <ScalarProperty Name="ParentId" ColumnName="ParentId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductTypeBrandView">
+            <EntityTypeMapping TypeName="SpareParts.DataAccess.Models.ProductTypeBrandView">
+              <MappingFragment StoreEntitySet="ProductTypeBrandView">
+                <ScalarProperty Name="Brands" ColumnName="Brands" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="ProductTypeId" ColumnName="ProductTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductView">
+            <EntityTypeMapping TypeName="SpareParts.DataAccess.Models.ProductView">
+              <MappingFragment StoreEntitySet="ProductView">
+                <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="IsReturn" ColumnName="IsReturn" />
+                <ScalarProperty Name="IsReplace" ColumnName="IsReplace" />
+                <ScalarProperty Name="IsReimbursed" ColumnName="IsReimbursed" />
+                <ScalarProperty Name="HasOrder" ColumnName="HasOrder" />
+                <ScalarProperty Name="Sold" ColumnName="Sold" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="ProductType" ColumnName="ProductType" />
+                <ScalarProperty Name="VIN" ColumnName="VIN" />
+                <ScalarProperty Name="Item" ColumnName="Item" />
+                <ScalarProperty Name="Years" ColumnName="Years" />
+                <ScalarProperty Name="Category" ColumnName="Category" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Brand" ColumnName="Brand" />
+                <ScalarProperty Name="BuyingPrice" ColumnName="BuyingPrice" />
+                <ScalarProperty Name="SellPrice" ColumnName="SellPrice" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ProductStatus">
+            <EntityTypeMapping TypeName="SpareParts.DataAccess.Models.ProductStatus">
+              <MappingFragment StoreEntitySet="ProductStatus">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Default" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

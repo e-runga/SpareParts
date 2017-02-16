@@ -1,0 +1,2426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DataService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="DataService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wsaw:UsingAddressing />
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:50984/DataService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:50984/DataService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:50984/DataService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/SpareParts.Dto" />
+      <xsd:import schemaLocation="http://localhost:50984/DataService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDataService_GetAllItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllItems" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetItemById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemById" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetItemById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetItemByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemByName" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetItemByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetItemByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateItem" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveItem" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_DeleteItem_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteItem" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_DeleteItem_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteItemResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllPaperReferences_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPaperReferences" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllPaperReferences_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllPaperReferencesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetPaperReferenceById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaperReferenceById" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetPaperReferenceById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaperReferenceByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetPaperReferenceByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaperReferenceByName" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetPaperReferenceByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetPaperReferenceByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreatePaperReference_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePaperReference" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreatePaperReference_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreatePaperReferenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SavePaperReference_InputMessage">
+    <wsdl:part name="parameters" element="tns:SavePaperReference" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SavePaperReference_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SavePaperReferenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_DeletePaperReference_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePaperReference" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_DeletePaperReference_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeletePaperReferenceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAttachmentByProductId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAttachmentByProductId" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAttachmentByProductId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAttachmentByProductIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAttachmentById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAttachmentById" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAttachmentById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAttachmentByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateAttachment_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAttachment" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateAttachment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateAttachmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveAttachment_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAttachment" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveAttachment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveAttachmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetCustomerById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerById" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetCustomerById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllCustomers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCustomers" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllCustomers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllCustomersForUI_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCustomersForUI" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllCustomersForUI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCustomersForUIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SearchCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SearchCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCustomer" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllYears_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllYears" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllYears_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllYearsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetYearById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetYearById" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetYearById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetYearByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateYear" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveYear_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveYear" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveYear_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveYearResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProducts" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllProductSummaries_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProductSummaries" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllProductSummaries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProductSummariesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetProductByCustomerId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductByCustomerId" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetProductByCustomerId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductByCustomerIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetProductByOperatorId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductByOperatorId" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetProductByOperatorId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductByOperatorIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetProductById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductById" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetProductById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateProduct" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveProductBasicInfo_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProductBasicInfo" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveProductBasicInfo_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProductBasicInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveProductSelling_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProductSelling" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveProductSelling_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProductSellingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveProductComplaint_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProductComplaint" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveProductComplaint_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProductComplaintResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveProductReturn_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProductReturn" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveProductReturn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProductReturnResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveProductReplacement_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProductReplacement" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveProductReplacement_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProductReplacementResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveProductRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProductRequest" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveProductRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProductRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveProductOrdering_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProductOrdering" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveProductOrdering_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProductOrderingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SearchProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchProduct" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SearchProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SearchSellableProducts_InputMessage">
+    <wsdl:part name="parameters" element="tns:SearchSellableProducts" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SearchSellableProducts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SearchSellableProductsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetProfileById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProfileById" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetProfileById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProfileByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetProfileByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProfileByName" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetProfileByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProfileByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllProfiles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProfiles" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllProfiles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProfilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveProfile_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProfile" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveProfile_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsers" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllUsersForUI_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsersForUI" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllUsersForUI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsersForUIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetUserByUserName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByUserName" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetUserByUserName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetUserById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserById" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetUserById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUser" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUser" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Authenticate_InputMessage">
+    <wsdl:part name="parameters" element="tns:Authenticate" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_Authenticate_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AuthenticateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_DisableUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:DisableUser" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_DisableUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DisableUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllBrands_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBrands" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllBrands_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBrandsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllBrandsForUI_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBrandsForUI" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllBrandsForUI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllBrandsForUIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetBrandById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBrandById" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetBrandById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBrandByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetBrandsByProductType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBrandsByProductType" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetBrandsByProductType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBrandsByProductTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetBrandByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetBrandByName" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetBrandByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetBrandByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateBrand_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBrand" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateBrand_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateBrandResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveBrand_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveBrand" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveBrand_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveBrandResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_DeleteBrand_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBrand" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_DeleteBrand_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteBrandResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCategories" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllCategoriesForUIView_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCategoriesForUIView" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllCategoriesForUIView_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCategoriesForUIViewResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategories" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetSubCategories_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubCategories" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetSubCategories_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubCategoriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetCategoryById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryById" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetCategoryById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetCategoriesByProductType_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoriesByProductType" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetCategoriesByProductType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoriesByProductTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetCategoryByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryByName" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetCategoryByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCategoryByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetSubCategory1_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubCategory1" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetSubCategory1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubCategory1Response" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetSubCategory2_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubCategory2" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetSubCategory2_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubCategory2Response" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCategory" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCategory" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_DeleteCategory_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCategory" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_DeleteCategory_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCategoryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllCountries_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCountries" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllCountries_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCountriesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllCountriesForUI_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCountriesForUI" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllCountriesForUI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCountriesForUIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllCountriesAndCities_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCountriesAndCities" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllCountriesAndCities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCountriesAndCitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetCountryByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountryByName" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetCountryByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountryByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateCountry_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCountry" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateCountry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveCountry_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCountry" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveCountry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_DeleteCountry_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCountry" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_DeleteCountry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetCityByCountry_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCityByCountry" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetCityByCountry_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCityByCountryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllCities_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCities" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllCities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllLocations_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLocations" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllLocations_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllLocationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetCityByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCityByName" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetCityByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCityByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateCity_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCity" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateCity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveCity_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCity" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveCity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_DeleteCity_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCity" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_DeleteCity_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCityResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllModels_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllModels" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllModels_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllModelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllModelsForUI_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllModelsForUI" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllModelsForUI_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllModelsForUIResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetModelsByBrand_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetModelsByBrand" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetModelsByBrand_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetModelsByBrandResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetModelsByBrands_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetModelsByBrands" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetModelsByBrands_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetModelsByBrandsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetModelById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetModelById" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetModelById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetModelByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetModelBySubModelId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetModelBySubModelId" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetModelBySubModelId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetModelBySubModelIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateModel" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveModel" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_DeleteModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteModel" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_DeleteModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllProductTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProductTypes" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllProductTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllProductTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetProductTypeById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductTypeById" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetProductTypeById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductTypeByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateProductType_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateProductType" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateProductType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateProductTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveProductType_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProductType" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveProductType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProductTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_DeleteProductType_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProductType" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_DeleteProductType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteProductTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllRatings_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRatings" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllRatings_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllRatingsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetRatingById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRatingById" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetRatingById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRatingByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GeRatingtByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GeRatingtByName" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GeRatingtByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GeRatingtByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateRating_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRating" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateRating_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRatingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveRating_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveRating" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveRating_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveRatingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_DeleteRating_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRating" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_DeleteRating_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRatingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllStates_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllStates" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllStates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllStatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetByStateId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetByStateId" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetByStateId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetByStateIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetStateByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetStateByName" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetStateByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetStateByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateState_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateState" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateState_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveState_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveState" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveState_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_DeleteState_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteState" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_DeleteState_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteStateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllSubModels_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSubModels" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllSubModels_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllSubModelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetSubModelById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubModelById" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetSubModelById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubModelByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetSubModelByModelId_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubModelByModelId" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetSubModelByModelId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubModelByModelIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetSubModelByModels_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubModelByModels" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetSubModelByModels_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetSubModelByModelsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateSubModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSubModel" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateSubModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateSubModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveSubModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSubModel" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveSubModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveSubModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_DeleteSubModel_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSubModel" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_DeleteSubModel_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSubModelResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllCustomerTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCustomerTypes" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetAllCustomerTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCustomerTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetCustomerTypeById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerTypeById" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetCustomerTypeById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerTypeByIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetCustomerTypeByName_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerTypeByName" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_GetCustomerTypeByName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerTypeByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateCustomerType_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCustomerType" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_CreateCustomerType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateCustomerTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveCustomerType_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCustomerType" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_SaveCustomerType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCustomerTypeResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_DeleteCustomerType_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCustomerType" />
+  </wsdl:message>
+  <wsdl:message name="IDataService_DeleteCustomerType_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCustomerTypeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDataService">
+    <wsdl:operation name="GetAllItems">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetAllItems" message="tns:IDataService_GetAllItems_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetAllItemsResponse" message="tns:IDataService_GetAllItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItemById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetItemById" message="tns:IDataService_GetItemById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetItemByIdResponse" message="tns:IDataService_GetItemById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetItemByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetItemByName" message="tns:IDataService_GetItemByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetItemByNameResponse" message="tns:IDataService_GetItemByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/CreateItem" message="tns:IDataService_CreateItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/CreateItemResponse" message="tns:IDataService_CreateItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/SaveItem" message="tns:IDataService_SaveItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/SaveItemResponse" message="tns:IDataService_SaveItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteItem">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/DeleteItem" message="tns:IDataService_DeleteItem_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/DeleteItemResponse" message="tns:IDataService_DeleteItem_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPaperReferences">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetAllPaperReferences" message="tns:IDataService_GetAllPaperReferences_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetAllPaperReferencesResponse" message="tns:IDataService_GetAllPaperReferences_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaperReferenceById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetPaperReferenceById" message="tns:IDataService_GetPaperReferenceById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetPaperReferenceByIdResponse" message="tns:IDataService_GetPaperReferenceById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetPaperReferenceByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetPaperReferenceByName" message="tns:IDataService_GetPaperReferenceByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetPaperReferenceByNameResponse" message="tns:IDataService_GetPaperReferenceByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreatePaperReference">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/CreatePaperReference" message="tns:IDataService_CreatePaperReference_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/CreatePaperReferenceResponse" message="tns:IDataService_CreatePaperReference_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SavePaperReference">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/SavePaperReference" message="tns:IDataService_SavePaperReference_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/SavePaperReferenceResponse" message="tns:IDataService_SavePaperReference_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePaperReference">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/DeletePaperReference" message="tns:IDataService_DeletePaperReference_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/DeletePaperReferenceResponse" message="tns:IDataService_DeletePaperReference_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachmentByProductId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetAttachmentByProductId" message="tns:IDataService_GetAttachmentByProductId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetAttachmentByProductIdResponse" message="tns:IDataService_GetAttachmentByProductId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachmentById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetAttachmentById" message="tns:IDataService_GetAttachmentById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetAttachmentByIdResponse" message="tns:IDataService_GetAttachmentById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateAttachment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/CreateAttachment" message="tns:IDataService_CreateAttachment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/CreateAttachmentResponse" message="tns:IDataService_CreateAttachment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveAttachment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/SaveAttachment" message="tns:IDataService_SaveAttachment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/SaveAttachmentResponse" message="tns:IDataService_SaveAttachment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetCustomerById" message="tns:IDataService_GetCustomerById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetCustomerByIdResponse" message="tns:IDataService_GetCustomerById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetAllCustomers" message="tns:IDataService_GetAllCustomers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetAllCustomersResponse" message="tns:IDataService_GetAllCustomers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomersForUI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetAllCustomersForUI" message="tns:IDataService_GetAllCustomersForUI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetAllCustomersForUIResponse" message="tns:IDataService_GetAllCustomersForUI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/SearchCustomer" message="tns:IDataService_SearchCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/SearchCustomerResponse" message="tns:IDataService_SearchCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/CreateCustomer" message="tns:IDataService_CreateCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/CreateCustomerResponse" message="tns:IDataService_CreateCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/SaveCustomer" message="tns:IDataService_SaveCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/SaveCustomerResponse" message="tns:IDataService_SaveCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllYears">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetAllYears" message="tns:IDataService_GetAllYears_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetAllYearsResponse" message="tns:IDataService_GetAllYears_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetYearById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetYearById" message="tns:IDataService_GetYearById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetYearByIdResponse" message="tns:IDataService_GetYearById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/CreateYear" message="tns:IDataService_CreateYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/CreateYearResponse" message="tns:IDataService_CreateYear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveYear">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/SaveYear" message="tns:IDataService_SaveYear_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/SaveYearResponse" message="tns:IDataService_SaveYear_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetAllProducts" message="tns:IDataService_GetAllProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetAllProductsResponse" message="tns:IDataService_GetAllProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProductSummaries">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetAllProductSummaries" message="tns:IDataService_GetAllProductSummaries_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetAllProductSummariesResponse" message="tns:IDataService_GetAllProductSummaries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductByCustomerId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetProductByCustomerId" message="tns:IDataService_GetProductByCustomerId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetProductByCustomerIdResponse" message="tns:IDataService_GetProductByCustomerId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductByOperatorId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetProductByOperatorId" message="tns:IDataService_GetProductByOperatorId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetProductByOperatorIdResponse" message="tns:IDataService_GetProductByOperatorId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetProductById" message="tns:IDataService_GetProductById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetProductByIdResponse" message="tns:IDataService_GetProductById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/CreateProduct" message="tns:IDataService_CreateProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/CreateProductResponse" message="tns:IDataService_CreateProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveProductBasicInfo">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/SaveProductBasicInfo" message="tns:IDataService_SaveProductBasicInfo_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/SaveProductBasicInfoResponse" message="tns:IDataService_SaveProductBasicInfo_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveProductSelling">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/SaveProductSelling" message="tns:IDataService_SaveProductSelling_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/SaveProductSellingResponse" message="tns:IDataService_SaveProductSelling_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveProductComplaint">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/SaveProductComplaint" message="tns:IDataService_SaveProductComplaint_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/SaveProductComplaintResponse" message="tns:IDataService_SaveProductComplaint_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveProductReturn">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/SaveProductReturn" message="tns:IDataService_SaveProductReturn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/SaveProductReturnResponse" message="tns:IDataService_SaveProductReturn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveProductReplacement">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/SaveProductReplacement" message="tns:IDataService_SaveProductReplacement_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/SaveProductReplacementResponse" message="tns:IDataService_SaveProductReplacement_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveProductRequest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/SaveProductRequest" message="tns:IDataService_SaveProductRequest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/SaveProductRequestResponse" message="tns:IDataService_SaveProductRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveProductOrdering">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/SaveProductOrdering" message="tns:IDataService_SaveProductOrdering_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/SaveProductOrderingResponse" message="tns:IDataService_SaveProductOrdering_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/SearchProduct" message="tns:IDataService_SearchProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/SearchProductResponse" message="tns:IDataService_SearchProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SearchSellableProducts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/SearchSellableProducts" message="tns:IDataService_SearchSellableProducts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/SearchSellableProductsResponse" message="tns:IDataService_SearchSellableProducts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetProfileById" message="tns:IDataService_GetProfileById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetProfileByIdResponse" message="tns:IDataService_GetProfileById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetProfileByName" message="tns:IDataService_GetProfileByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetProfileByNameResponse" message="tns:IDataService_GetProfileByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProfiles">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetAllProfiles" message="tns:IDataService_GetAllProfiles_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetAllProfilesResponse" message="tns:IDataService_GetAllProfiles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveProfile">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/SaveProfile" message="tns:IDataService_SaveProfile_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/SaveProfileResponse" message="tns:IDataService_SaveProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetAllUsers" message="tns:IDataService_GetAllUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetAllUsersResponse" message="tns:IDataService_GetAllUsers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsersForUI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetAllUsersForUI" message="tns:IDataService_GetAllUsersForUI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetAllUsersForUIResponse" message="tns:IDataService_GetAllUsersForUI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByUserName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetUserByUserName" message="tns:IDataService_GetUserByUserName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetUserByUserNameResponse" message="tns:IDataService_GetUserByUserName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetUserById" message="tns:IDataService_GetUserById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetUserByIdResponse" message="tns:IDataService_GetUserById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/CreateUser" message="tns:IDataService_CreateUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/CreateUserResponse" message="tns:IDataService_CreateUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/SaveUser" message="tns:IDataService_SaveUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/SaveUserResponse" message="tns:IDataService_SaveUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Authenticate">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/Authenticate" message="tns:IDataService_Authenticate_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/AuthenticateResponse" message="tns:IDataService_Authenticate_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DisableUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/DisableUser" message="tns:IDataService_DisableUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/DisableUserResponse" message="tns:IDataService_DisableUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBrands">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetAllBrands" message="tns:IDataService_GetAllBrands_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetAllBrandsResponse" message="tns:IDataService_GetAllBrands_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBrandsForUI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetAllBrandsForUI" message="tns:IDataService_GetAllBrandsForUI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetAllBrandsForUIResponse" message="tns:IDataService_GetAllBrandsForUI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBrandById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetBrandById" message="tns:IDataService_GetBrandById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetBrandByIdResponse" message="tns:IDataService_GetBrandById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBrandsByProductType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetBrandsByProductType" message="tns:IDataService_GetBrandsByProductType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetBrandsByProductTypeResponse" message="tns:IDataService_GetBrandsByProductType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBrandByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetBrandByName" message="tns:IDataService_GetBrandByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetBrandByNameResponse" message="tns:IDataService_GetBrandByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateBrand">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/CreateBrand" message="tns:IDataService_CreateBrand_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/CreateBrandResponse" message="tns:IDataService_CreateBrand_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveBrand">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/SaveBrand" message="tns:IDataService_SaveBrand_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/SaveBrandResponse" message="tns:IDataService_SaveBrand_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBrand">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/DeleteBrand" message="tns:IDataService_DeleteBrand_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/DeleteBrandResponse" message="tns:IDataService_DeleteBrand_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetAllCategories" message="tns:IDataService_GetAllCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetAllCategoriesResponse" message="tns:IDataService_GetAllCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCategoriesForUIView">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetAllCategoriesForUIView" message="tns:IDataService_GetAllCategoriesForUIView_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetAllCategoriesForUIViewResponse" message="tns:IDataService_GetAllCategoriesForUIView_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetCategories" message="tns:IDataService_GetCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetCategoriesResponse" message="tns:IDataService_GetCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubCategories">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetSubCategories" message="tns:IDataService_GetSubCategories_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetSubCategoriesResponse" message="tns:IDataService_GetSubCategories_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetCategoryById" message="tns:IDataService_GetCategoryById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetCategoryByIdResponse" message="tns:IDataService_GetCategoryById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoriesByProductType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetCategoriesByProductType" message="tns:IDataService_GetCategoriesByProductType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetCategoriesByProductTypeResponse" message="tns:IDataService_GetCategoriesByProductType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetCategoryByName" message="tns:IDataService_GetCategoryByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetCategoryByNameResponse" message="tns:IDataService_GetCategoryByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubCategory1">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetSubCategory1" message="tns:IDataService_GetSubCategory1_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetSubCategory1Response" message="tns:IDataService_GetSubCategory1_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubCategory2">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetSubCategory2" message="tns:IDataService_GetSubCategory2_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetSubCategory2Response" message="tns:IDataService_GetSubCategory2_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/CreateCategory" message="tns:IDataService_CreateCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/CreateCategoryResponse" message="tns:IDataService_CreateCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/SaveCategory" message="tns:IDataService_SaveCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/SaveCategoryResponse" message="tns:IDataService_SaveCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCategory">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/DeleteCategory" message="tns:IDataService_DeleteCategory_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/DeleteCategoryResponse" message="tns:IDataService_DeleteCategory_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCountries">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetAllCountries" message="tns:IDataService_GetAllCountries_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetAllCountriesResponse" message="tns:IDataService_GetAllCountries_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCountriesForUI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetAllCountriesForUI" message="tns:IDataService_GetAllCountriesForUI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetAllCountriesForUIResponse" message="tns:IDataService_GetAllCountriesForUI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCountriesAndCities">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetAllCountriesAndCities" message="tns:IDataService_GetAllCountriesAndCities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetAllCountriesAndCitiesResponse" message="tns:IDataService_GetAllCountriesAndCities_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetCountryByName" message="tns:IDataService_GetCountryByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetCountryByNameResponse" message="tns:IDataService_GetCountryByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCountry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/CreateCountry" message="tns:IDataService_CreateCountry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/CreateCountryResponse" message="tns:IDataService_CreateCountry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCountry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/SaveCountry" message="tns:IDataService_SaveCountry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/SaveCountryResponse" message="tns:IDataService_SaveCountry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCountry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/DeleteCountry" message="tns:IDataService_DeleteCountry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/DeleteCountryResponse" message="tns:IDataService_DeleteCountry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCityByCountry">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetCityByCountry" message="tns:IDataService_GetCityByCountry_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetCityByCountryResponse" message="tns:IDataService_GetCityByCountry_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCities">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetAllCities" message="tns:IDataService_GetAllCities_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetAllCitiesResponse" message="tns:IDataService_GetAllCities_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLocations">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetAllLocations" message="tns:IDataService_GetAllLocations_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetAllLocationsResponse" message="tns:IDataService_GetAllLocations_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCityByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetCityByName" message="tns:IDataService_GetCityByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetCityByNameResponse" message="tns:IDataService_GetCityByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/CreateCity" message="tns:IDataService_CreateCity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/CreateCityResponse" message="tns:IDataService_CreateCity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/SaveCity" message="tns:IDataService_SaveCity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/SaveCityResponse" message="tns:IDataService_SaveCity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCity">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/DeleteCity" message="tns:IDataService_DeleteCity_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/DeleteCityResponse" message="tns:IDataService_DeleteCity_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllModels">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetAllModels" message="tns:IDataService_GetAllModels_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetAllModelsResponse" message="tns:IDataService_GetAllModels_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllModelsForUI">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetAllModelsForUI" message="tns:IDataService_GetAllModelsForUI_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetAllModelsForUIResponse" message="tns:IDataService_GetAllModelsForUI_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetModelsByBrand">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetModelsByBrand" message="tns:IDataService_GetModelsByBrand_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetModelsByBrandResponse" message="tns:IDataService_GetModelsByBrand_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetModelsByBrands">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetModelsByBrands" message="tns:IDataService_GetModelsByBrands_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetModelsByBrandsResponse" message="tns:IDataService_GetModelsByBrands_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetModelById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetModelById" message="tns:IDataService_GetModelById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetModelByIdResponse" message="tns:IDataService_GetModelById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetModelBySubModelId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetModelBySubModelId" message="tns:IDataService_GetModelBySubModelId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetModelBySubModelIdResponse" message="tns:IDataService_GetModelBySubModelId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/CreateModel" message="tns:IDataService_CreateModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/CreateModelResponse" message="tns:IDataService_CreateModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/SaveModel" message="tns:IDataService_SaveModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/SaveModelResponse" message="tns:IDataService_SaveModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/DeleteModel" message="tns:IDataService_DeleteModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/DeleteModelResponse" message="tns:IDataService_DeleteModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProductTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetAllProductTypes" message="tns:IDataService_GetAllProductTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetAllProductTypesResponse" message="tns:IDataService_GetAllProductTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductTypeById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetProductTypeById" message="tns:IDataService_GetProductTypeById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetProductTypeByIdResponse" message="tns:IDataService_GetProductTypeById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateProductType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/CreateProductType" message="tns:IDataService_CreateProductType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/CreateProductTypeResponse" message="tns:IDataService_CreateProductType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveProductType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/SaveProductType" message="tns:IDataService_SaveProductType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/SaveProductTypeResponse" message="tns:IDataService_SaveProductType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProductType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/DeleteProductType" message="tns:IDataService_DeleteProductType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/DeleteProductTypeResponse" message="tns:IDataService_DeleteProductType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRatings">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetAllRatings" message="tns:IDataService_GetAllRatings_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetAllRatingsResponse" message="tns:IDataService_GetAllRatings_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRatingById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetRatingById" message="tns:IDataService_GetRatingById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetRatingByIdResponse" message="tns:IDataService_GetRatingById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GeRatingtByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GeRatingtByName" message="tns:IDataService_GeRatingtByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GeRatingtByNameResponse" message="tns:IDataService_GeRatingtByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateRating">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/CreateRating" message="tns:IDataService_CreateRating_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/CreateRatingResponse" message="tns:IDataService_CreateRating_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveRating">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/SaveRating" message="tns:IDataService_SaveRating_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/SaveRatingResponse" message="tns:IDataService_SaveRating_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRating">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/DeleteRating" message="tns:IDataService_DeleteRating_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/DeleteRatingResponse" message="tns:IDataService_DeleteRating_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStates">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetAllStates" message="tns:IDataService_GetAllStates_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetAllStatesResponse" message="tns:IDataService_GetAllStates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetByStateId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetByStateId" message="tns:IDataService_GetByStateId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetByStateIdResponse" message="tns:IDataService_GetByStateId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetStateByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetStateByName" message="tns:IDataService_GetStateByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetStateByNameResponse" message="tns:IDataService_GetStateByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateState">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/CreateState" message="tns:IDataService_CreateState_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/CreateStateResponse" message="tns:IDataService_CreateState_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveState">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/SaveState" message="tns:IDataService_SaveState_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/SaveStateResponse" message="tns:IDataService_SaveState_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteState">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/DeleteState" message="tns:IDataService_DeleteState_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/DeleteStateResponse" message="tns:IDataService_DeleteState_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSubModels">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetAllSubModels" message="tns:IDataService_GetAllSubModels_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetAllSubModelsResponse" message="tns:IDataService_GetAllSubModels_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubModelById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetSubModelById" message="tns:IDataService_GetSubModelById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetSubModelByIdResponse" message="tns:IDataService_GetSubModelById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubModelByModelId">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetSubModelByModelId" message="tns:IDataService_GetSubModelByModelId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetSubModelByModelIdResponse" message="tns:IDataService_GetSubModelByModelId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetSubModelByModels">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetSubModelByModels" message="tns:IDataService_GetSubModelByModels_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetSubModelByModelsResponse" message="tns:IDataService_GetSubModelByModels_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateSubModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/CreateSubModel" message="tns:IDataService_CreateSubModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/CreateSubModelResponse" message="tns:IDataService_CreateSubModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveSubModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/SaveSubModel" message="tns:IDataService_SaveSubModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/SaveSubModelResponse" message="tns:IDataService_SaveSubModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSubModel">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/DeleteSubModel" message="tns:IDataService_DeleteSubModel_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/DeleteSubModelResponse" message="tns:IDataService_DeleteSubModel_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomerTypes">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetAllCustomerTypes" message="tns:IDataService_GetAllCustomerTypes_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetAllCustomerTypesResponse" message="tns:IDataService_GetAllCustomerTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerTypeById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetCustomerTypeById" message="tns:IDataService_GetCustomerTypeById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetCustomerTypeByIdResponse" message="tns:IDataService_GetCustomerTypeById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerTypeByName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/GetCustomerTypeByName" message="tns:IDataService_GetCustomerTypeByName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/GetCustomerTypeByNameResponse" message="tns:IDataService_GetCustomerTypeByName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateCustomerType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/CreateCustomerType" message="tns:IDataService_CreateCustomerType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/CreateCustomerTypeResponse" message="tns:IDataService_CreateCustomerType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCustomerType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/SaveCustomerType" message="tns:IDataService_SaveCustomerType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/SaveCustomerTypeResponse" message="tns:IDataService_SaveCustomerType_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCustomerType">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDataService/DeleteCustomerType" message="tns:IDataService_DeleteCustomerType_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDataService/DeleteCustomerTypeResponse" message="tns:IDataService_DeleteCustomerType_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DataService" type="tns:IDataService">
+    <wsp:PolicyReference URI="#DataService_policy" />
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetAllItems">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetAllItems" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemById">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetItemById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetItemByName">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetItemByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateItem">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/CreateItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveItem">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/SaveItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteItem">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/DeleteItem" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllPaperReferences">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetAllPaperReferences" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaperReferenceById">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetPaperReferenceById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetPaperReferenceByName">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetPaperReferenceByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreatePaperReference">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/CreatePaperReference" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SavePaperReference">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/SavePaperReference" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePaperReference">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/DeletePaperReference" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachmentByProductId">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetAttachmentByProductId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAttachmentById">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetAttachmentById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateAttachment">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/CreateAttachment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveAttachment">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/SaveAttachment" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerById">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetCustomerById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomers">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetAllCustomers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomersForUI">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetAllCustomersForUI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchCustomer">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/SearchCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCustomer">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/CreateCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCustomer">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/SaveCustomer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllYears">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetAllYears" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetYearById">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetYearById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateYear">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/CreateYear" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveYear">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/SaveYear" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProducts">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetAllProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProductSummaries">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetAllProductSummaries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductByCustomerId">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetProductByCustomerId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductByOperatorId">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetProductByOperatorId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductById">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetProductById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateProduct">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/CreateProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProductBasicInfo">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/SaveProductBasicInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProductSelling">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/SaveProductSelling" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProductComplaint">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/SaveProductComplaint" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProductReturn">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/SaveProductReturn" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProductReplacement">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/SaveProductReplacement" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProductRequest">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/SaveProductRequest" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProductOrdering">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/SaveProductOrdering" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchProduct">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/SearchProduct" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SearchSellableProducts">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/SearchSellableProducts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileById">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetProfileById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProfileByName">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetProfileByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProfiles">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetAllProfiles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProfile">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/SaveProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsers">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetAllUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsersForUI">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetAllUsersForUI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserByUserName">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetUserByUserName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetUserById">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetUserById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateUser">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/CreateUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveUser">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/SaveUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Authenticate">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/Authenticate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DisableUser">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/DisableUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBrands">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetAllBrands" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllBrandsForUI">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetAllBrandsForUI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBrandById">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetBrandById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBrandsByProductType">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetBrandsByProductType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBrandByName">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetBrandByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateBrand">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/CreateBrand" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveBrand">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/SaveBrand" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteBrand">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/DeleteBrand" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCategories">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetAllCategories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCategoriesForUIView">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetAllCategoriesForUIView" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategories">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetCategories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubCategories">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetSubCategories" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryById">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetCategoryById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoriesByProductType">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetCategoriesByProductType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCategoryByName">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetCategoryByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubCategory1">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetSubCategory1" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubCategory2">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetSubCategory2" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCategory">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/CreateCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCategory">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/SaveCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCategory">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/DeleteCategory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCountries">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetAllCountries" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCountriesForUI">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetAllCountriesForUI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCountriesAndCities">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetAllCountriesAndCities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryByName">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetCountryByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCountry">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/CreateCountry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCountry">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/SaveCountry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCountry">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/DeleteCountry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityByCountry">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetCityByCountry" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCities">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetAllCities" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllLocations">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetAllLocations" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCityByName">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetCityByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCity">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/CreateCity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCity">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/SaveCity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCity">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/DeleteCity" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllModels">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetAllModels" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllModelsForUI">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetAllModelsForUI" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModelsByBrand">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetModelsByBrand" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModelsByBrands">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetModelsByBrands" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModelById">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetModelById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetModelBySubModelId">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetModelBySubModelId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateModel">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/CreateModel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveModel">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/SaveModel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteModel">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/DeleteModel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllProductTypes">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetAllProductTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductTypeById">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetProductTypeById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateProductType">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/CreateProductType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveProductType">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/SaveProductType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteProductType">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/DeleteProductType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllRatings">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetAllRatings" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetRatingById">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetRatingById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GeRatingtByName">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GeRatingtByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateRating">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/CreateRating" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveRating">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/SaveRating" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRating">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/DeleteRating" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStates">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetAllStates" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetByStateId">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetByStateId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetStateByName">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetStateByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateState">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/CreateState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveState">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/SaveState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteState">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/DeleteState" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllSubModels">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetAllSubModels" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubModelById">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetSubModelById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubModelByModelId">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetSubModelByModelId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetSubModelByModels">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetSubModelByModels" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateSubModel">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/CreateSubModel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveSubModel">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/SaveSubModel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSubModel">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/DeleteSubModel" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCustomerTypes">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetAllCustomerTypes" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerTypeById">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetCustomerTypeById" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerTypeByName">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/GetCustomerTypeByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCustomerType">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/CreateCustomerType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SaveCustomerType">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/SaveCustomerType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCustomerType">
+      <soap12:operation soapAction="http://tempuri.org/IDataService/DeleteCustomerType" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DataService">
+    <wsdl:port name="DataService" binding="tns:DataService">
+      <soap12:address location="http://localhost:50984/DataService.svc" />
+      <wsa10:EndpointReference>
+        <wsa10:Address>http://localhost:50984/DataService.svc</wsa10:Address>
+      </wsa10:EndpointReference>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

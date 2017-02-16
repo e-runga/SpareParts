@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0DB631B6-807B-4A17-A366-6C8407A86335}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SpareParts.Tester</RootNamespace>
+    <AssemblyName>SpareParts.Tester</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\DataServiceClient\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Properties\DataSources\SpareParts.Dto.AttachmentDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.BrandDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.BrandViewForUIDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.CategoryDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.CategoryViewDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.CityDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.CityUIDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.CountryDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.CountryUIDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.CustomerDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.CustomerTypeDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.CustomerUIDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.ItemDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.LocationDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.LocationViewDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.ModelDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.ModelViewDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.PaperReferenceDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.ProductDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.ProductTypeDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.ProductTypeViewDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.ProductViewDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.ProfileDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.RatingDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.StateDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.SubCategory1Dto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.SubCategory2Dto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.SubModelDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.UserDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.UserUIDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.YearDto.datasource" />
+    <None Include="Service References\DataServiceClient\DataService.wsdl" />
+    <None Include="Service References\DataServiceClient\DataService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataServiceClient\DataService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataServiceClient\DataService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SpareParts.Dto\SpareParts.Dto.csproj">
+      <Project>{de7dcb37-9a90-479a-848c-f97242002566}</Project>
+      <Name>SpareParts.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SpareParts.Logic\SpareParts.Logic.csproj">
+      <Project>{baaa100c-eca3-46da-a2fa-cc3f83ad409a}</Project>
+      <Name>SpareParts.Logic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SpareParts.Tools\SpareParts.Tools.csproj">
+      <Project>{80ad6698-ea95-45be-bb38-0b5be9cd7474}</Project>
+      <Name>SpareParts.Tools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DataServiceClient\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DataServiceClient\DataService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DataServiceClient\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DataServiceClient\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DataServiceClient\DataService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataServiceClient\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

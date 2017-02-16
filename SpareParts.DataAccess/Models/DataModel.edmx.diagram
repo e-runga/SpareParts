@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="691b0eba9479404bacb1a4a0b9636fbc" Name="Diagram1" ZoomLevel="78">
+        <EntityTypeShape EntityType="SpareParts.DataAccess.Models.Attachment" Width="1.5" PointX="6.25" PointY="10.75" />
+        <EntityTypeShape EntityType="SpareParts.DataAccess.Models.City" Width="1.5" PointX="10.875" PointY="20.375" />
+        <EntityTypeShape EntityType="SpareParts.DataAccess.Models.Country" Width="1.5" PointX="12.875" PointY="20.375" />
+        <EntityTypeShape EntityType="SpareParts.DataAccess.Models.Customer" Width="1.5" PointX="6.25" PointY="21.875" />
+        <EntityTypeShape EntityType="SpareParts.DataAccess.Models.CustomerType" Width="1.5" PointX="3.375" PointY="23.125" />
+        <EntityTypeShape EntityType="SpareParts.DataAccess.Models.Item" Width="1.5" PointX="6.375" PointY="19.625" />
+        <EntityTypeShape EntityType="SpareParts.DataAccess.Models.PaperReference" Width="1.5" PointX="6.375" PointY="13.5" />
+        <EntityTypeShape EntityType="SpareParts.DataAccess.Models.ProductYear" Width="1.5" PointX="10.875" PointY="18" />
+        <EntityTypeShape EntityType="SpareParts.DataAccess.Models.Rating" Width="1.5" PointX="6.375" PointY="17.125" />
+        <EntityTypeShape EntityType="SpareParts.DataAccess.Models.State" Width="1.5" PointX="6.375" PointY="15.25" />
+        <EntityTypeShape EntityType="SpareParts.DataAccess.Models.Year" Width="1.5" PointX="12.875" PointY="18" />
+        <AssociationConnector Association="SpareParts.DataAccess.Models.FK_City_Country" />
+        <AssociationConnector Association="SpareParts.DataAccess.Models.FK_Customer_CustomerType" />
+        <AssociationConnector Association="SpareParts.DataAccess.Models.FK_ProductYear_Year" />
+        <EntityTypeShape EntityType="SpareParts.DataAccess.Models.Operator" Width="2.125" PointX="7.875" PointY="5.25" />
+        <EntityTypeShape EntityType="SpareParts.DataAccess.Models.Brand" Width="1.5" PointX="13.125" PointY="10.5" />
+        <EntityTypeShape EntityType="SpareParts.DataAccess.Models.Category" Width="1.5" PointX="11.125" PointY="12.75" />
+        <EntityTypeShape EntityType="SpareParts.DataAccess.Models.Model" Width="1.5" PointX="15.125" PointY="10.5" />
+        <EntityTypeShape EntityType="SpareParts.DataAccess.Models.ProductType" Width="1.5" PointX="11.125" PointY="10.5" />
+        <EntityTypeShape EntityType="SpareParts.DataAccess.Models.SubModel" Width="1.5" PointX="17" PointY="10.5" />
+        <AssociationConnector Association="SpareParts.DataAccess.Models.BrandModel" />
+        <AssociationConnector Association="SpareParts.DataAccess.Models.ModelSubModel" />
+        <AssociationConnector Association="SpareParts.DataAccess.Models.ProductTypeBrand" />
+        <AssociationConnector Association="SpareParts.DataAccess.Models.ProductTypeCategory" />
+        <EntityTypeShape EntityType="SpareParts.DataAccess.Models.BrandView" Width="1.5" PointX="6.5" PointY="0.75" />
+        <EntityTypeShape EntityType="SpareParts.DataAccess.Models.BrandViewForUI" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SpareParts.DataAccess.Models.LocationView" Width="1.5" PointX="4.625" PointY="0.75" />
+        <AssociationConnector Association="SpareParts.DataAccess.Models.FK_Category_SubCategory" />
+        <EntityTypeShape EntityType="SpareParts.DataAccess.Models.Product" Width="2" PointX="8.5" PointY="10.625" />
+        <AssociationConnector Association="SpareParts.DataAccess.Models.FK_Attachment_Product" />
+        <AssociationConnector Association="SpareParts.DataAccess.Models.FK_Product_City" />
+        <AssociationConnector Association="SpareParts.DataAccess.Models.FK_Product_Buyer" />
+        <AssociationConnector Association="SpareParts.DataAccess.Models.FK_Product_CustomerCreator" />
+        <AssociationConnector Association="SpareParts.DataAccess.Models.FK_Product_OrderCustomer" />
+        <AssociationConnector Association="SpareParts.DataAccess.Models.FK_Product_Item" />
+        <AssociationConnector Association="SpareParts.DataAccess.Models.FK_Product_PaperReference" />
+        <AssociationConnector Association="SpareParts.DataAccess.Models.FK_Product_ComplaintOperator" />
+        <AssociationConnector Association="SpareParts.DataAccess.Models.FK_Product_OperatorCreator" />
+        <AssociationConnector Association="SpareParts.DataAccess.Models.FK_Product_OrderOperator" />
+        <AssociationConnector Association="SpareParts.DataAccess.Models.FK_Product_ProductType" />
+        <AssociationConnector Association="SpareParts.DataAccess.Models.FK_Product_Rating" />
+        <AssociationConnector Association="SpareParts.DataAccess.Models.FK_Product_ReplaceOperator" />
+        <AssociationConnector Association="SpareParts.DataAccess.Models.FK_Product_RequestOperator" />
+        <AssociationConnector Association="SpareParts.DataAccess.Models.FK_Product_ReturnOperator" />
+        <AssociationConnector Association="SpareParts.DataAccess.Models.FK_Product_SellingOperator" />
+        <AssociationConnector Association="SpareParts.DataAccess.Models.FK_Product_State" />
+        <AssociationConnector Association="SpareParts.DataAccess.Models.FK_ProductYear_Product" />
+        <AssociationConnector Association="SpareParts.DataAccess.Models.ProductBrand" />
+        <AssociationConnector Association="SpareParts.DataAccess.Models.ProductCategory" />
+        <AssociationConnector Association="SpareParts.DataAccess.Models.ProductModel" />
+        <EntityTypeShape EntityType="SpareParts.DataAccess.Models.ProductTypeView" Width="1.5" PointX="0.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SpareParts.DataAccess.Models.ModelView" Width="1.5" PointX="3.375" PointY="6.75" />
+        <EntityTypeShape EntityType="SpareParts.DataAccess.Models.CategoryView" Width="1.5" PointX="3.375" PointY="3.75" />
+        <EntityTypeShape EntityType="SpareParts.DataAccess.Models.ActiveCategoriesView" Width="1.5" PointX="9.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SpareParts.DataAccess.Models.ProductTypeBrandView" Width="1.5" PointX="0.75" PointY="9.75" />
+        <EntityTypeShape EntityType="SpareParts.DataAccess.Models.ProductView" Width="1.5" PointX="0.625" PointY="0.75" />
+        <EntityTypeShape EntityType="SpareParts.DataAccess.Models.ProductStatus" Width="1.5" PointX="13.625" PointY="22.75" />
+        <AssociationConnector Association="SpareParts.DataAccess.Models.FK_Product_ProductStatus" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

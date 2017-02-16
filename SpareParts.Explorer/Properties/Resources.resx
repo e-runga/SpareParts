@@ -1,0 +1,529 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="user_black_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user_black_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mekano200" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mekano200.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Message_Success" xml:space="preserve">
+    <value>Success</value>
+  </data>
+  <data name="twocogwheels" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\two-cogwheels.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="star_black_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\star_black_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="UserGroup_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\UserGroup_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="WelcomeMessage" xml:space="preserve">
+    <value>Welcome {0}</value>
+  </data>
+  <data name="Message_DeleteSuccessfull" xml:space="preserve">
+    <value>The object has been successfully deleted</value>
+  </data>
+  <data name="home32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user_arrow128x128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user_arrow128x128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Title_NewProductType" xml:space="preserve">
+    <value>Mekano - New Product Type</value>
+  </data>
+  <data name="ManagementBrands" xml:space="preserve">
+    <value>Brands</value>
+  </data>
+  <data name="user_blue_delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user_blue_delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ManagementLocations" xml:space="preserve">
+    <value>Product Locations</value>
+  </data>
+  <data name="customer_add_16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\custsomer_add_16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="LocationPin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\location-pin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Error_AtLEastOneCriteriaRequired" xml:space="preserve">
+    <value>Please select a search criteria</value>
+  </data>
+  <data name="location_pin32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\location_pin32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="product_add_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\product_add_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ManagementProductTypes" xml:space="preserve">
+    <value>Product Types</value>
+  </data>
+  <data name="ManagementSubCategories" xml:space="preserve">
+    <value>Sub Categories</value>
+  </data>
+  <data name="user32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Message_SellingSuccessfull" xml:space="preserve">
+    <value>The Product {0} has been sold to {0}.</value>
+  </data>
+  <data name="MessageDeleteCategory_Confirmation" xml:space="preserve">
+    <value>Are you sure you want to delete {0} and all its Sub Categories (level 1 and 2) ?</value>
+  </data>
+  <data name="user_black_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user_black_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="customer_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\customer_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Title_CreateCustomerProduct" xml:space="preserve">
+    <value>Mekano - Customer Sell</value>
+  </data>
+  <data name="customer_add_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\custsomer_add_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewCarWithPriceTag" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\brand-new-car-with-dollar-price-tag.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="customer_search_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\custsomer_search_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="percentage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\percentage.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="engine_32x32_green" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\engine_32x32_green.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="NewCustomerPanelTitle" xml:space="preserve">
+    <value>New Customer</value>
+  </data>
+  <data name="product_add_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\product_add_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user_arrow32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user_arrow32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mekano32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mekano32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ManagementSubCategories1" xml:space="preserve">
+    <value>Sub Categories Level 1</value>
+  </data>
+  <data name="car_model64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\car_model64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MessageDeleteCountry_Confirmation" xml:space="preserve">
+    <value>Are you sure you want to delete {0} and all its Cities ?</value>
+  </data>
+  <data name="ManagementCategories" xml:space="preserve">
+    <value>Categories</value>
+  </data>
+  <data name="cash-register64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cash-register64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Title_ConfirmAction" xml:space="preserve">
+    <value>Mekano -Please confirm</value>
+  </data>
+  <data name="Title_SellProduct" xml:space="preserve">
+    <value>Mekano - Product Selling</value>
+  </data>
+  <data name="car_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\car_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Title_Details" xml:space="preserve">
+    <value>Mekano - Details</value>
+  </data>
+  <data name="UserAdd32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user-add32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TooTip_AddLocation" xml:space="preserve">
+    <value>Create a new location</value>
+  </data>
+  <data name="product_add_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\product_add_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="star_black_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\star_black_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Engine32x32Blue" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\engine32x32-blue.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="CarChangingLanes" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\car-changing-lanes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="customer_add_48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\custsomer_add_48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Customer_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Customer_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="AllowUsersToEditRanges_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AllowUsersToEditRanges_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Error_SelectRow" xml:space="preserve">
+    <value>Please select an item</value>
+  </data>
+  <data name="customer_search_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\customer_search_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="delete32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\delete32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="barcode_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\barcode_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cart16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cart16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Error_Title" xml:space="preserve">
+    <value>Error</value>
+  </data>
+  <data name="add32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\add32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="boy_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boy_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Message_SuccessProductCreated" xml:space="preserve">
+    <value>The product was successfully created</value>
+  </data>
+  <data name="touchmode_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\touchmode_16x162.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Error_CustomerTypeMandatory" xml:space="preserve">
+    <value>Please select a customer type</value>
+  </data>
+  <data name="users64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\users64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Error_UnableToDelete" xml:space="preserve">
+    <value>There was a problem when deleting the item</value>
+  </data>
+  <data name="user_magnifier128x128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user_magnifier128x128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ManagementModels" xml:space="preserve">
+    <value>Models</value>
+  </data>
+  <data name="SettingsForCategories" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settings-for-categories.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Car_Machine64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Car_Machine64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="users_black_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\users_black_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ManagementUsers" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="Home_32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Home_32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Car_Machine32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Car_Machine32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="car_model32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\car_model32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MessageDisable_Confirmation" xml:space="preserve">
+    <value>Are you sure you want to disable this user {0} ?</value>
+  </data>
+  <data name="barcode_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\barcode_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="engine32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\engine32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cart_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cart_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="users_black_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\users_black_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="two_cogwheels32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\two-cogwheels32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Error_MobileMandatory" xml:space="preserve">
+    <value>Please provide a mobile number</value>
+  </data>
+  <data name="Error_MandatoryFields" xml:space="preserve">
+    <value>Please provide the mandatory informations, marked with a *</value>
+  </data>
+  <data name="boy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ManagementSubModels" xml:space="preserve">
+    <value>Sub Models</value>
+  </data>
+  <data name="customer_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\customer_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bag16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bag16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Title_BuyProduct" xml:space="preserve">
+    <value>Mekano - Product Buying</value>
+  </data>
+  <data name="UserAdd64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user-add64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Error_UnableToSellProduct" xml:space="preserve">
+    <value>We were unable to confirm the selling, please try again later.</value>
+  </data>
+  <data name="MessageDelete_Confirmation" xml:space="preserve">
+    <value>Are you sure you want to delete {0} ?</value>
+  </data>
+  <data name="SearchProductPanetTitle" xml:space="preserve">
+    <value>Search Product</value>
+  </data>
+  <data name="MessageDeleteModel_Confirmation" xml:space="preserve">
+    <value>Are you sure you want to delete {0} and all its Sub Models ?</value>
+  </data>
+  <data name="mekano16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mekano16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Error_FirstNameMandatory" xml:space="preserve">
+    <value>Please provide a first name</value>
+  </data>
+  <data name="mekano64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\mekano64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Error_LastNameMandatory" xml:space="preserve">
+    <value>Please provide a last name</value>
+  </data>
+  <data name="boy_128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boy_128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Title_CreateCustomer" xml:space="preserve">
+    <value>Mekano - New Customer</value>
+  </data>
+  <data name="user_blue_add2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user_blue_add2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="boy48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boy48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="SearchCustomerPanelTitle" xml:space="preserve">
+    <value>Search Customer</value>
+  </data>
+  <data name="ManagementRatings" xml:space="preserve">
+    <value>Ratings</value>
+  </data>
+  <data name="BuyDepositProduct" xml:space="preserve">
+    <value>Buy / Deposit</value>
+  </data>
+  <data name="rearrange" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\rearrange.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="customer_search_128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\customer_search_128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="brand_new_car_with_dollar_price_tag32x32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\brand-new-car-with-dollar-price-tag32x32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ManagementSubCategories2" xml:space="preserve">
+    <value>Sub Categories Level 2</value>
+  </data>
+  <data name="trailer64x64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\trailer64x64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Add_16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Add_16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Title_SearchCustomer" xml:space="preserve">
+    <value>Mekano - Search Customer</value>
+  </data>
+  <data name="trailer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\trailer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="engine" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\engine.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PriceTag16x16" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\price-tag16x16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Message_SuccessCustomerCreated" xml:space="preserve">
+    <value>The customer was successfully created</value>
+  </data>
+  <data name="Error_EmailMandatory" xml:space="preserve">
+    <value>Please provide an email address</value>
+  </data>
+  <data name="car_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\car_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="boy_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\boy_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="trademark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\trademark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cart_32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cart_32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PistonsCross" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pistons-cross(2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="find_replace_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\find_replace_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="purchase_order_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\purchase_order_64.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="return_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\return_64.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Complaint_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Complaint_64.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Search_Product_64" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Search_Product_64.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Error_FillAmounts" xml:space="preserve">
+    <value>Please fill the selling and advance amounts.</value>
+  </data>
+  <data name="Error_FillNumber" xml:space="preserve">
+    <value>Please fill a {0} number.</value>
+  </data>
+  <data name="Error_SelectReplacementProduct" xml:space="preserve">
+    <value>Please select a replacement product.</value>
+  </data>
+  <data name="Title_ProductComplaint" xml:space="preserve">
+    <value>Mekano - Complaint</value>
+  </data>
+  <data name="Title_ProductOrdering" xml:space="preserve">
+    <value>Mekano - Ordering</value>
+  </data>
+  <data name="Title_ProductReplacement" xml:space="preserve">
+    <value>Mekano - Replacement</value>
+  </data>
+  <data name="Title_ProductRequest" xml:space="preserve">
+    <value>Mekano - Request</value>
+  </data>
+  <data name="Title_ProductReturn" xml:space="preserve">
+    <value>Mekano - Return</value>
+  </data>
+  <data name="Message_SuccessProductUpdate" xml:space="preserve">
+    <value>The information was successfully updated.</value>
+  </data>
+</root>

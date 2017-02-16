@@ -1,0 +1,620 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{92EF6226-391D-4640-8853-943E75671D66}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SpareParts.Explorer</RootNamespace>
+    <AssemblyName>SpareParts.Explorer</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.3.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Mekano.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Label="SlowCheetah">
+    <SlowCheetahToolsPath>$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\..\packages\SlowCheetah.2.5.15\tools\))</SlowCheetahToolsPath>
+    <SlowCheetah_EnableImportFromNuGet Condition=" '$(SlowCheetah_EnableImportFromNuGet)'=='' ">true</SlowCheetah_EnableImportFromNuGet>
+    <SlowCheetah_NuGetImportPath Condition=" '$(SlowCheetah_NuGetImportPath)'=='' ">$([System.IO.Path]::GetFullPath( $(MSBuildProjectDirectory)\Properties\SlowCheetah\SlowCheetah.Transforms.targets ))</SlowCheetah_NuGetImportPath>
+    <SlowCheetahTargets Condition=" '$(SlowCheetah_EnableImportFromNuGet)'=='true' and Exists('$(SlowCheetah_NuGetImportPath)') ">$(SlowCheetah_NuGetImportPath)</SlowCheetahTargets>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>SpareParts.Explorer.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Images.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v15.2.Core, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v15.2.Core, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraNavBar.v15.2, Version=15.2.10.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\AdminBrandControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminBrandControl.Designer.cs">
+      <DependentUpon>AdminBrandControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminCategoriesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminCategoriesControl.Designer.cs">
+      <DependentUpon>AdminCategoriesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminLocationControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminLocationControl.Designer.cs">
+      <DependentUpon>AdminLocationControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminModelsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminModelsControl.Designer.cs">
+      <DependentUpon>AdminModelsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminProductTypeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminProductTypeControl.Designer.cs">
+      <DependentUpon>AdminProductTypeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminRatingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminRatingsControl.Designer.cs">
+      <DependentUpon>AdminRatingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminSubCategoriesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminSubCategoriesControl.Designer.cs">
+      <DependentUpon>AdminSubCategoriesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminUsersControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminUsersControl.Designer.cs">
+      <DependentUpon>AdminUsersControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\BaseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\BaseControl.Designer.cs">
+      <DependentUpon>BaseControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\CustomerBuyProductControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\CustomerBuyProductControl.Designer.cs">
+      <DependentUpon>CustomerBuyProductControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SearchProductControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SearchProductControl.Designer.cs">
+      <DependentUpon>SearchProductControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SearchCustomerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\SearchCustomerControl.Designer.cs">
+      <DependentUpon>SearchCustomerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\UserManagementControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\UserManagementControl.Designer.cs">
+      <DependentUpon>UserManagementControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Data\ActionItem.cs" />
+    <Compile Include="Dialogs\BaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\BaseForm.Designer.cs">
+      <DependentUpon>BaseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\CustomerBuyingConfirmation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\CustomerBuyingConfirmation.Designer.cs">
+      <DependentUpon>CustomerBuyingConfirmation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\CustomerBuyingProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\CustomerBuyingProduct.Designer.cs">
+      <DependentUpon>CustomerBuyingProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\CustomerProductSelling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\CustomerProductSelling.Designer.cs">
+      <DependentUpon>CustomerProductSelling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\NewCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\NewCustomer.Designer.cs">
+      <DependentUpon>NewCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\NewProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\NewProduct.Designer.cs">
+      <DependentUpon>NewProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ProductActions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ProductActions.Designer.cs">
+      <DependentUpon>ProductActions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ProductTypeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ProductTypeForm.Designer.cs">
+      <DependentUpon>ProductTypeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SearchCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SearchCustomerForm.Designer.cs">
+      <DependentUpon>SearchCustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ViewLocationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ViewLocationForm.Designer.cs">
+      <DependentUpon>ViewLocationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Helper\Extensions.cs" />
+    <Compile Include="HomeControl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeControl.Designer.cs">
+      <DependentUpon>HomeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Person.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\DataService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Singletons\Security.cs" />
+    <EmbeddedResource Include="Controls\AdminBrandControl.resx">
+      <DependentUpon>AdminBrandControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AdminCategoriesControl.resx">
+      <DependentUpon>AdminCategoriesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AdminLocationControl.resx">
+      <DependentUpon>AdminLocationControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AdminModelsControl.resx">
+      <DependentUpon>AdminModelsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AdminProductTypeControl.resx">
+      <DependentUpon>AdminProductTypeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AdminRatingsControl.resx">
+      <DependentUpon>AdminRatingsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AdminSubCategoriesControl.resx">
+      <DependentUpon>AdminSubCategoriesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\AdminUsersControl.resx">
+      <DependentUpon>AdminUsersControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\BaseControl.resx">
+      <DependentUpon>BaseControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\CustomerBuyProductControl.resx">
+      <DependentUpon>CustomerBuyProductControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SearchProductControl.resx">
+      <DependentUpon>SearchProductControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\SearchCustomerControl.resx">
+      <DependentUpon>SearchCustomerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\UserManagementControl.resx">
+      <DependentUpon>UserManagementControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\CustomerBuyingConfirmation.resx">
+      <DependentUpon>CustomerBuyingConfirmation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\CustomerBuyingProduct.resx">
+      <DependentUpon>CustomerBuyingProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\CustomerProductSelling.resx">
+      <DependentUpon>CustomerProductSelling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\NewCustomer.resx">
+      <DependentUpon>NewCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\NewProduct.resx">
+      <DependentUpon>NewProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ProductActions.resx">
+      <DependentUpon>ProductActions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ProductTypeForm.resx">
+      <DependentUpon>ProductTypeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SearchCustomerForm.resx">
+      <DependentUpon>SearchCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ViewLocationForm.resx">
+      <DependentUpon>ViewLocationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeControl.resx">
+      <DependentUpon>HomeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+      <TransformOnBuild>true</TransformOnBuild>
+    </None>
+    <None Include="app.Debug.config">
+      <DependentUpon>app.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+    </None>
+    <None Include="app.Release.config">
+      <DependentUpon>app.config</DependentUpon>
+      <IsTransformFile>True</IsTransformFile>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\SpareParts.Dto.AttachmentDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.BrandDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.BrandViewForUIDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.CategoryDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.CategoryViewDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.CityDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.CityUIDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.CountryDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.CountryUIDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.CustomerDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.CustomerTypeDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.CustomerUIDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.ItemDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.LevelDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.LocationDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.LocationViewDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.ModelDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.ModelViewDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.PaperReferenceDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.ProductDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.ProductSummaryDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.ProductTypeDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.ProductTypeViewDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.ProductViewDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.ProfileDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.RatingDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.StateDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.SubCategory1Dto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.SubCategory1FlatDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.SubCategory2Dto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.SubModelDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.UserDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.UserUIDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Dto.YearDto.datasource" />
+    <None Include="Properties\DataSources\SpareParts.Explorer.Data.ActionItem.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Properties\SlowCheetah\SlowCheetah.Transforms.targets" />
+    <None Include="Service References\DataService\DataService.wsdl" />
+    <None Include="Service References\DataService\DataService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataService\DataService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataService\DataService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SpareParts.Contracts\SpareParts.Contracts.csproj">
+      <Project>{11349016-cae1-44d0-a9b3-f5ec6a28d342}</Project>
+      <Name>SpareParts.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SpareParts.Dto\SpareParts.Dto.csproj">
+      <Project>{de7dcb37-9a90-479a-848c-f97242002566}</Project>
+      <Name>SpareParts.Dto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SpareParts.Tools\SpareParts.Tools.csproj">
+      <Project>{80ad6698-ea95-45be-bb38-0b5be9cd7474}</Project>
+      <Name>SpareParts.Tools</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pistons-cross%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Customer_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\UserGroup_32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_blue_add2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_blue_delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trademark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings-for-categories.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\car-changing-lanes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rearrange.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\location-pin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\brand-new-car-with-dollar-price-tag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\percentage.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DataService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DataService\DataService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DataService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DataService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\DataService\DataService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\DataService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\engine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\engine_32x32_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cart16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AllowUsersToEditRanges_16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Car_Machine64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Car_Machine32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\engine32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\engine32x32-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-add64x64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-add32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bag16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\price-tag16x16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_magnifier128x128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_arrow128x128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user_arrow32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\product_add_64.png" />
+    <None Include="Resources\product_add_32.png" />
+    <None Include="Resources\product_add_48.png" />
+    <None Include="Resources\boy.png" />
+    <None Include="Resources\boy48.png" />
+    <None Include="Resources\cash-register64.png" />
+    <None Include="Resources\Add_16x16.png" />
+    <None Include="Resources\touchmode_16x16.png" />
+    <None Include="Resources\touchmode_16x161.png" />
+    <None Include="Resources\touchmode_16x162.png" />
+    <None Include="Resources\purchase_order_64.png" />
+    <None Include="Resources\complaint.png" />
+    <None Include="Resources\return_64.jpg" />
+    <None Include="Resources\find_replace_64.png" />
+    <None Include="Resources\Complaint_64.jpg" />
+    <None Include="Resources\Search_Product_64.jpg" />
+    <Content Include="Template\InstallHome.htm" />
+    <Content Include="Template\publish-template.htm" />
+    <None Include="Resources\trailer.png" />
+    <None Include="Resources\trailer64x64.png" />
+    <None Include="Resources\two-cogwheels.png" />
+    <None Include="Resources\two-cogwheels32x32.png" />
+    <None Include="Resources\delete32x32.png" />
+    <None Include="Resources\add32x32.png" />
+    <None Include="Resources\brand-new-car-with-dollar-price-tag32x32.png" />
+    <None Include="Resources\car_model32x32.png" />
+    <None Include="Resources\car_model64x64.png" />
+    <None Include="Resources\location_pin32x32.png" />
+    <None Include="Resources\car_32.png" />
+    <None Include="Resources\car_64.png" />
+    <None Include="Resources\star_black_32.png" />
+    <None Include="Resources\star_black_64.png" />
+    <None Include="Resources\cart_64.png" />
+    <None Include="Resources\cart_32.png" />
+    <None Include="Resources\user_black_64.png" />
+    <None Include="Resources\user_black_32.png" />
+    <None Include="Resources\users_black_32.png" />
+    <None Include="Resources\users_black_64.png" />
+    <None Include="Resources\customer_64.png" />
+    <None Include="Resources\customer_32.png" />
+    <None Include="Resources\boy_32.png" />
+    <None Include="Resources\boy_64.png" />
+    <None Include="Resources\barcode_32.png" />
+    <None Include="Resources\barcode_64.png" />
+    <None Include="Resources\boy_128.png" />
+    <None Include="Resources\mekano16.png" />
+    <None Include="Resources\mekano32.png" />
+    <None Include="Resources\mekano64.png" />
+    <None Include="Resources\mekano200.png" />
+    <Content Include="Mekano.ico" />
+    <None Include="Resources\customer_search_32.png" />
+    <None Include="Resources\customer_search_128.png" />
+    <None Include="Resources\custsomer_add_16.png" />
+    <None Include="Resources\custsomer_add_32.png" />
+    <None Include="Resources\custsomer_add_48.png" />
+    <None Include="Resources\custsomer_search_64.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SlowCheetahTargets)" Condition="Exists('$(SlowCheetahTargets)')" Label="SlowCheetah" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
