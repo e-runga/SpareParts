@@ -15,6 +15,11 @@ namespace SpareParts.Explorer.Dialogs
         #endregion
 
         #region .: Events :.
+        /// <summary>
+        /// Handles the Load event of the NewCustomer control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void NewCustomer_Load(object sender, EventArgs e)
         {
             try
@@ -30,6 +35,11 @@ namespace SpareParts.Explorer.Dialogs
         #endregion
 
         #region .: Action buttons :.
+        /// <summary>
+        /// Handles the Click event of the simpleButtonSaveCustomer control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void simpleButtonSaveCustomer_Click(object sender, EventArgs e)
         {
             try
@@ -102,6 +112,11 @@ namespace SpareParts.Explorer.Dialogs
             }
         }
 
+        /// <summary>
+        /// Handles the Click event of the simpleButtonCancel control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void simpleButtonCancel_Click(object sender, EventArgs e)
         {
             this.DialogResult = DialogResult.Cancel;
@@ -109,6 +124,11 @@ namespace SpareParts.Explorer.Dialogs
         #endregion
 
         #region .: Events :.
+        /// <summary>
+        /// Handles the Popup event of the lookUpEditCustomerType control.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="EventArgs"/> instance containing the event data.</param>
         private void lookUpEditCustomerType_Popup(object sender, EventArgs e)
         {
             var lookUp = sender as DevExpress.XtraEditors.LookUpEdit;
