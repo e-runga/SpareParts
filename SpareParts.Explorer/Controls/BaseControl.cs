@@ -39,7 +39,7 @@ namespace SpareParts.Explorer.Controls
         {
             get
             {
-                return Properties.Resources.Home_32x32;
+                return Properties.Resources.Home16x16;
             }
         }
 
