@@ -149,13 +149,6 @@ namespace SpareParts.Explorer.Dialogs
         #endregion
 
         #region .: Common events :.
-        private void CommonControlLookupPopup(object sender, EventArgs e)
-        {
-            var lookUp = sender as DevExpress.XtraEditors.LookUpEdit;
-            var form = (lookUp as DevExpress.Utils.Win.IPopupControl).PopupWindow as PopupLookUpEditForm;
-            form.Width = lookUp.Width;
-        }
-
         private void CommonControlComboBoxEditPopup(object sender, EventArgs e)
         {
             var combo = sender as DevExpress.XtraEditors.CheckedComboBoxEdit;

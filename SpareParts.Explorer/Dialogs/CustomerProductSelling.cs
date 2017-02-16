@@ -279,22 +279,5 @@ namespace SpareParts.Explorer.Dialogs
             toolTip.SetToolTip(this.pictureBoxAddLocation, Properties.Resources.TooTip_AddLocation);
         }
         #endregion
-
-        #region .: Common events :.
-        private void CommonControlLookupPopup(object sender, EventArgs e)
-        {
-            var lookUp = sender as DevExpress.XtraEditors.LookUpEdit;
-            var form = (lookUp as DevExpress.Utils.Win.IPopupControl).PopupWindow as PopupLookUpEditForm;
-            form.Width = lookUp.Width;
-        }
-
-        private void CommonContrrolComboBoxEditPopup(object sender, EventArgs e)
-        {
-            var combo = sender as DevExpress.XtraEditors.CheckedComboBoxEdit;
-            var form = (combo as DevExpress.Utils.Win.IPopupControl).PopupWindow as CheckedPopupContainerForm;
-            form.Width = combo.Width;
-            form.Height = 160;
-        }
-        #endregion
     }
 }
