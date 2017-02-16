@@ -50,20 +50,20 @@ namespace SpareParts.Explorer.Controls
             }
         }
 
-        /// <summary>
-        /// The current page
-        /// </summary>
-        private int CurrentPage = 1;
+        ///// <summary>
+        ///// The current page
+        ///// </summary>
+        //private int CurrentPage = 1;
 
-        /// <summary>
-        /// The page size, the number of elements to display in the grid
-        /// </summary>
-        private int PageSize = 100;
+        ///// <summary>
+        ///// The page size, the number of elements to display in the grid
+        ///// </summary>
+        //private int PageSize = 100;
 
-        /// <summary>
-        /// The page count
-        /// </summary>
-        private int PageCount;
+        ///// <summary>
+        ///// The page count
+        ///// </summary>
+        //private int PageCount;
 
         #endregion
 
@@ -105,22 +105,6 @@ namespace SpareParts.Explorer.Controls
             this.lookUpEditModel.Properties.DataSource = base.ServiceClient.GetAllModels();
         }
         #endregion
-
-        //#region .: Common events :.
-        //private void CommonControlLookupPopup(object sender, EventArgs e)
-        //{
-        //    var lookUp = sender as DevExpress.XtraEditors.LookUpEdit;
-        //    var form = (lookUp as DevExpress.Utils.Win.IPopupControl).PopupWindow as PopupLookUpEditForm;
-        //    form.Width = lookUp.Width;
-        //}
-
-        //private void CommonContrrolComboBoxEditPopup(object sender, EventArgs e)
-        //{
-        //    var combo = sender as DevExpress.XtraEditors.CheckedComboBoxEdit;
-        //    var form = (combo as DevExpress.Utils.Win.IPopupControl).PopupWindow as CheckedPopupContainerForm;
-        //    form.Width = combo.Width;
-        //}
-        //#endregion
 
         #region .: Events :.
         private void lookUpEditProductType_EditValueChanged(object sender, EventArgs e)

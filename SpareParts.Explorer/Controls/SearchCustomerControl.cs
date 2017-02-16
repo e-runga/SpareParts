@@ -42,20 +42,20 @@ namespace SpareParts.Explorer.Controls
             }
         }
 
-        /// <summary>
-        /// The current page
-        /// </summary>
-        private int CurrentPage = 1;
+        ///// <summary>
+        ///// The current page
+        ///// </summary>
+        //private int CurrentPage = 1;
 
-        /// <summary>
-        /// The page size, the number of elements to display in the grid
-        /// </summary>
-        private int PageSize = 100;
+        ///// <summary>
+        ///// The page size, the number of elements to display in the grid
+        ///// </summary>
+        //private int PageSize = 100;
 
-        /// <summary>
-        /// The page count
-        /// </summary>
-        private int PageCount;
+        ///// <summary>
+        ///// The page count
+        ///// </summary>
+        //private int PageCount;
 
         #endregion
 
